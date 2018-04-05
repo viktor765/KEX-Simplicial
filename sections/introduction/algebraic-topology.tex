@@ -1,0 +1,15 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+    The most familiar object is the topological n-simplex $\Delta_n$,
+    \begin{equation}
+        \Delta_n = \{(t_0, . . . , t_n)  |\sum_{i=0}^{n}t_i=1 \wedge t_i \geq 0\} \subset \mathbb{R}^{n+1}
+    \end{equation}
+    homeomorphic to a closed n-ball. These simplices have $n+1$ faces. For a simplicial complex $X$, which is a collection of simplices of varying dimensions the following must hold. Every face of a simplex in X must be in X and every intersection of any two simplices in X is a face of each of them. These are objects similar to CW-complexes and $\Delta$-complexes, which will be discussed and not discussed, respectively.
+    
+    A CW-complex, closure finite weak complex, is a somewhat complicated construction at first sight but built on simple topological concepts. First of all a cell is roughly a topological space $C$ homeomorphic to the interior n-dimensional disc, $\mathring{D}^n$, with an additional finite partition of the boundary into subcells or more commonly faces, simply cells of lower dimension. As can be understood cells are constructed inductively from points to lines to planes and so on. For a cell complex $X$, a Hausdorff space, consisting of a disjoint union of open cells $e^n$ of which it is required that there exists a map $\varphi:\Delta\to\closure{e}^n$ such that $\varphi|(\Delta_n - \boundary{\Delta}_n )$ is a homeomorphism onto $e^n$ and $\varphi(\boundary{\Delta}_n)$ is contained in the union of cells of dimension less than n. A subset is closed iff it meets $\closure{e}^n\:\forall \:n$ in a closed set. This amounts to an invariant interior and boundary mapped homeomorpihcally to their respective, in a sense an abstract topological space not embedded. Examples include simplices and more generally convex polytopes. Later it is shown that the geometric realization of simplicial sets are CW-complexes.
+    
+    Another relevant concept connecting to CW-complexes is that of n-skeleton, $X_n$, referring to the subspace of topological space $X$ consisting of the union of cells of dimesion at most n. The skeleta can be seen as a halt in the induction when creating the complex.  
+    
+    \end{document}

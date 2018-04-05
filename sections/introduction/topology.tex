@@ -1,0 +1,49 @@
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+    A topology on a set $X$ is a collection, $\uptau$, of subsets of $X$, called open sets, such that the union of open sets is open, any finite intersection of open sets is open, and both $X$ and the empty set are open. A set together with a topology on it is called a topological space. 
+            
+    Extremes are when every subset is an open set, called the discrete topology, or when none are, the trivial topology. A subset is called closed if its complement is open and vice versa, the property of closed is determined either through closure, limit points or boundary points. A limit point of a subset $B$ of a topological space X is a point, p, for which every neighbourhood contains at least one point of $B - \{p\}$. The union of $B$ and its limit points is called the closure, with a line over $B$ the as notation, $\closure{B}$. The interior of a set B on the other hand is the union of all open sets contained in $B$, usually denoted $\mathring{B}$. And finally the boundary with notation $\boundary{B}$.
+    
+    \begin{theorem}
+        The following are equivalent for a set B:
+        \begin{enumerate}
+            \item B is closed
+            \item B is equal to its closure, $\closure{B}$
+            \item B contains all its limit points
+        \end{enumerate}
+    \end{theorem}
+    
+    Continuity of a function $f:X\to Y$ is defined such that the inverse image of each open set of Y is open in X, where X and Y are topological spaces. One can also define continuity through the use of closed sets. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same. 
+    
+    A base for a topological space is a collection of open sets such that every open set is a union of members of the base. This is denoted as the base generating the topology.
+    
+    \begin{definition}
+        For a nonempty collection of subsets of a set X, $B$, if $B$ covers X and the intersection of any finite number of members of $B$ is always in $B$ then $B$ is a \defemph{base} for a topology on X.
+    \end{definition}
+    
+    Any subset $A$ of $\mathcal{P}(X)$ can be used to generate a topology on $X$. Take the sets of $A$ to be open and add all sets that can be created by finite intersection of these(consider the empty intersection to be $X$) and then all unions of those. Call this collection $\uptau$. It is the coarsest topology on $X$ containing $A$ as a subset, meaning that any other such topology will contain $A$ as a subset. We say that $A$ is a \defemph{subbase} of $\uptau$ and that $A$ generates $\uptau$. 
+    
+    If $A$ generates the topology $\uptau$ by only taking unions, then $A$ is called a \defemph{base} for. A subbase forms a base for the space it generates by taking all finite intersections.
+    
+    \begin{definition}
+        Given that a space X can be written as a cartesian product as $$X=\prod_{i\in I}^{}X_i,$$ for some index set $I$, the \defemph{product topology} on $X$ is defined to be the coarsest topology for which the canonical projections $p_i:X\to X_i$ are continuous. This results in open sets of the form $ \prod_{i\in I}U_i$ and their unions where each $U_i$ is open in $X_i$ and $U_i \ne X_i$ for only finitely many $i\in I$. The reason for this is that  base element is achieved for each inverse map $p_i$ and generating the rest via finite intersections thus the coarsest.
+    \end{definition}
+    This can be realized observing the preimages of open sets $O_i \subseteq X_i$ wrt $p_i$. These will be the cartesian product of the full spaces except for $O_i$ taking the place of $X_i$. Since only these sets are required in the topology for the continuity of $p_i$ they form a subbase. As we only take finite intersections, only finitely many $X_i$ are replaced by open proper subsets of $X_i$ in the base.
+    
+    \begin{definition}
+        A \defemph{disjoint union}, $\coprod$, of a family of sets is a modified union operator which indexes elements according to the origin set. 
+    \end{definition}
+    
+    In topology one can then construct the disjoint union topology, in coanalogy to products, as follows. Let $\{X_i : i \in I\}$, a family of topological spaces, where the disjoint union is called $X$. The disjoint union topology is defined as the finest topology for which the canonical injections, $\varsigma_i :X_i\to X, \: \forall\: i \in I$ are continuous.
+    
+    The quotient topology or identification topology is constructed as follows. For a topological space X and partition $\mathcal{P}$ the points of a new space Y are the members of $\mathcal{P}$ with $\pi:X\to Y$, the canonical projection map, this achieves the largest topology on Y for which $\pi$ is continuous.
+    
+    A topological space X is said to be Hausdorff if all distinct points in X are pairwise neighbourhood-separable. Most studied topological spaces are Hausdorff, for instance the real numbers, and products of Hausdorff spaces preserves the property however a qoutient space of a Hausdorff space need not be Hausdorff.
+    
+    In conjunction with Hausdorff one often sees the term compact. A topological space, $X$, is compact if each of its open covers has a finite subcover, where a cover is a union of sets which contain $X$ as a subset. 
+    
+    A \textbf{disconnected} topological space is such if it is the union of two disjoint nonempty sets, whereas a connected cannot be expressed as such. 
+
+\end{document}
