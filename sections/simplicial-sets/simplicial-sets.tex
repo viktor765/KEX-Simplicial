@@ -1,4 +1,4 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[../../main.tex]{subfiles}
 
 \begin{document}
 
@@ -9,6 +9,28 @@
     Degeneracy maps
     
     Geometric realization
+
+    \begin{proposition}
+        The geometric realization of a simplicial set $X$ is Hausdorff.
+    \end{proposition}
+
+    \begin{proof}
+        Any given point $x \in \geom[X]$ has a unique non-degenerate representative, in some simplex $k_n$. Make a small open neighborhood of $x$ in the interior of $k_n$ and call it $N_k(x)$. Assuming $x \neq y$ we can also create a disjoint such $N_l(y)$.
+        
+        We will create open neighborhoods of $x$, $N_n(x)$ for every dimension that are closed under the equivalence relation when restricting ourselves to simplices of dimension $\leq n$. This is done by including all such $N_{n'}(x)$ of $n' < n$ and also all equivalent degenerate points in $N_n(x)$.
+        
+        Assume the construction is made up to dimension $n$. Via $\sim$ there are subsets of non-degenerate $(n+1)$-simplices $k_{n+1}$ identified with $N_n$ in $\geom[X]$. Now for any such $k_{n+1}$, we can extend $N_n(x)$ to an open subset of $k_{n+1}$ by stretching it slightly towards the barycenter. If $y \in \interior{k_{n+1}}$ then this neighborhood and $N_{n+1}(y)$ can be made small enough not to intersect each other. Also, if $N_{n}(y)$ is identified with another face of $k_{n+1}$ they will not intersect.
+
+        If $k_{n+1}$ is a degenerate simplex we will instead let the neighborhood of $x$ in it to be the preimage of the projection onto $k_n$. This is important as all these points are in the identification of $N_n(x)$.
+
+        Now take $N_{n+1}(x)$ to be the union of all the neighborhoods of $N_n(x)$ created in this fashion for every $k_{n+1}$ considered. It is disjoint from $N_{n+1}(y)$. Let
+
+        \begin{equation*}
+            N(x) = \Pi_{n \geq 0} N_n(x)
+        \end{equation*}
+
+        and likewise create $N(y)$. $N(x)$ and $N(y)$ are saturated open sets that are disjoint and so their projections on $\geom[X]$ will be open and disjoint.
+    \end{proof}
     
     Examples
 
