@@ -2,9 +2,15 @@
 
 \begin{document}
 
-    A topology on a set $X$ is a collection, $\uptau$, of subsets of $X$, called open sets, such that the union of open sets is open, any finite intersection of open sets is open, and both $X$ and the empty set are open. A set together with a topology on it is called a topological space. 
+    Although topology is an area of mathematics the term itself also refers to a central concept of the field of how elements of a set relate spatially, defined below. 
+
+    \begin{definition}
+        A topology on a set $X$ is a collection, $\uptau$, of subsets of $X$, called open sets, such that the union of open sets is open, any finite intersection of open sets is open, and both $X$ and the empty set are open. 
+    \end{definition}
+
+    A set together with a topology on it is called a topological space, reflecting the spatial notion. The same set can thus have different topologies resulting in different framework, e.g. the real line and the cantor set can be thought of as the same set with different topologies. 
             
-    Extremes are when every subset is an open set, called the discrete topology, or when none are, the trivial topology. A subset is called closed if its complement is open and vice versa, the property of closed is determined either through closure, limit points or boundary points. A limit point of a subset $B$ of a topological space X is a point, p, for which every neighbourhood contains at least one point of $B - \{p\}$. The union of $B$ and its limit points is called the closure, with a line over $B$ the as notation, $\closure{B}$. The interior of a set B on the other hand is the union of all open sets contained in $B$, usually denoted $\mathring{B}$. And finally the boundary with notation $\boundary{B}$.
+    Extremes exist such as when every subset is an open set, called the discrete topology, or when none are, the trivial topology. A subset is called closed if its complement is open and vice versa, the property of closed is determined either through closure, limit points or boundary points. A limit point of a subset $B$ of a topological space $X$ is a point, p, for which every neighborhood contains at least one point of $B - \{p\}$. The union of $B$ and its limit points is called the closure, with a line over $B$ as notation, $\closure{B}$. The interior of a set B on the other hand is the union of all open sets contained in $B$, usually denoted $\mathring{B}$. And finally the boundary with notation $\boundary{B}$.
     
     \begin{proposition}
         The following are equivalent for a set B:
@@ -15,7 +21,7 @@
         \end{enumerate}
     \end{proposition}
     
-    Continuity of a function $f:X\to Y$ is defined such that the inverse image of each open set of Y is open in X, where X and Y are topological spaces. One can also define continuity through the use of closed sets. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same. 
+    Continuity of a function, $f$, between topological spaces, $X$ and $Y$, $f:X\to Y$ is defined such that the inverse image of each open set of Y is open in X. One can also define continuity through the use of closed sets and a continuous function is usually called a map. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same. Many of the following definitions depend partially on continuous functions, it is a core concept.
     
     A base for a topological space is a collection of open sets such that every open set is a union of members of the base. This is denoted as the base generating the topology.
     
@@ -30,6 +36,7 @@
     \begin{definition}
         Given that a space X can be written as a cartesian product as $$X=\prod_{i\in I}^{}X_i,$$ for some index set $I$, the \defemph{product topology} on $X$ is defined to be the coarsest topology for which the canonical projections $p_i:X\to X_i$ are continuous. This results in open sets of the form $ \prod_{i\in I}U_i$ and their unions where each $U_i$ is open in $X_i$ and $U_i \ne X_i$ for only finitely many $i\in I$. The reason for this is that  base element is achieved for each inverse map $p_i$ and generating the rest via finite intersections thus the coarsest.
     \end{definition}
+    
     This can be realized observing the preimages of open sets $O_i \subseteq X_i$ wrt $p_i$. These will be the cartesian product of the full spaces except for $O_i$ taking the place of $X_i$. Since only these sets are required in the topology for the continuity of $p_i$ they form a subbase. As we only take finite intersections, only finitely many $X_i$ are replaced by open proper subsets of $X_i$ in the base.
     
     \begin{definition}
@@ -40,7 +47,7 @@
     
     The quotient topology or identification topology is constructed as follows. For a topological space X and partition $\mathcal{P}$ the points of a new space Y are the members of $\mathcal{P}$ with $\pi:X\to Y$, the canonical projection map, this achieves the largest topology on Y for which $\pi$ is continuous.
     
-    A topological space X is said to be Hausdorff if all distinct points in X are pairwise neighbourhood-separable. Most studied topological spaces are Hausdorff, for instance the real numbers, and products of Hausdorff spaces preserves the property however a qoutient space of a Hausdorff space need not be Hausdorff.
+    A topological space X is said to be Hausdorff if all distinct points in X are pairwise neighborhood-separable. Most studied topological spaces are Hausdorff, for instance the real numbers, and products of Hausdorff spaces preserves the property however a quotient space of a Hausdorff space need not be Hausdorff. In addition to but less important than what was just being discussed there are several separation axioms, some weaker, relating to points and their distinction. 
     
     In conjunction with Hausdorff one often sees the term compact. A topological space, $X$, is compact if each of its open covers has a finite subcover, where a cover is a union of sets which contain $X$ as a subset. 
     
