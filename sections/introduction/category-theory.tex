@@ -84,9 +84,17 @@
     \end{theorem}
     
     \begin{proof}
-        Consider the following diagram of a natural transformation between $h^A$ and $\functor{F}$ applied to $A$ and an arbitrary object $X \in C$.
+        Consider the following diagram of a natural transformation $\Phi$ between $h^A$ and $\functor{F}$ applied to $A$ and an arbitrary object $X \in C$. 
         
+        %insert diagram
+
+        Let $u$ be the action of $\Phi_A$ on $\idarrow[A]$. By looking at both ways of sending $\idarrow[A]$ to $\functor{F}(X)$ it is realized that the action of $\Phi_X$ on any $f \in \mathrm{Hom}(A, X)$ is given by 
+
+        \begin{equation}
+            \Phi_X(f) = \functor{F}f(u)
+        \end{equation}
         
+        This means that $\Phi$ is completely determined by its action on the identity which can take on any value in $\functor{F}(A)$.
     \end{proof}
-    
+
 \end{document}
