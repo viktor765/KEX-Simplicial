@@ -8,5 +8,8 @@
 *.blg
 *.fdb_latexmk
 *.fls
+*.synctex
 *.synctex.gz
+*.synctex(busy)
 .vscode/
+subfiles.sty
