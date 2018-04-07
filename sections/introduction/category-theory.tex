@@ -15,6 +15,8 @@
         \end{enumerate}
     \end{definition}
     
+    Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is preserved.
+
     \begin{example}
         The category of topological spaces, usually denoted $\mathbf{Top}$, with objects being topological spaces and morphisms being continuous functions. A variant could be to limit spaces to compactly generated Hausdorff spaces usually referred to as $\mathbf{CGHaus}$.
     \end{example}
@@ -30,21 +32,21 @@
         
         If \ref{cov} is reversed to $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$, then $\functor{F}$ is \defemph{contravariant}.
     \end{definition}
+    
+    The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$,.
 
     \begin{example}
         A few examples of functors include:
         \begin{itemize}
-            \item the forgetful functor G, e.g. $G:\mathbf{Grp}\to \mathbf{Set}$, 
-            \item simplicial set X, $X:\Delta\to \mathbf{Set}$, a contravariant functor
+            \item the forgetful functor $G$, which forgets structure, e.g. $G:\mathbf{Grp}\to \mathbf{Set}$ taking a group to its underlying set
+            \item simplicial set $X$, $X:\Delta\to \mathbf{Set}$, a contravariant functor
             \item geometric realization $\geom[\cdot]$, $\geom[\cdot]:\mathbf{sSet}\to \mathbf{CGHaus}$
         \end{itemize}
     \end{example}
 
-    The examples stated above will be further discussed in the next chapter.
-
-    Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is preserved.
+    The two latter examples stated above will be further discussed in the next chapter, their concise statements are deceptive and require a more elaborate treatise. Somewhat easier to grasp is the following.
     
-    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram.
+    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A commutative diagram is defined such that all directed paths with identical start and end points lead to the same results by composition. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
     If to a diagram $\functor{D}$ in $\cat{C}$, we add an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes, $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and colimits. Important examples of limits are products are products, pullbacks, equalizers and terminal objects.
     
