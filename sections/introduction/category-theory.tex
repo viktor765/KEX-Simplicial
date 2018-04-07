@@ -16,7 +16,7 @@
     \end{definition}
     
     \begin{example}
-        The category of topological spaces, usually denoted $\mathbf{Top}$, with objects being topological spaces and morphisms being continuous functions. A variant could be to limit spaces to compact such usually referred to as $\mathbf{CTop}$
+        The category of topological spaces, usually denoted $\mathbf{Top}$, with objects being topological spaces and morphisms being continuous functions. A variant could be to limit spaces to compactly generated Hausdorff spaces usually referred to as $\mathbf{CGHaus}$.
     \end{example}
 
     \begin{definition}
@@ -30,7 +30,18 @@
         
         If \ref{cov} is reversed to $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$, then $\functor{F}$ is \defemph{contravariant}.
     \end{definition}
-    
+
+    \begin{example}
+        A few examples of functors include:
+        \begin{itemize}
+            \item the forgetful functor G, e.g. $G:\mathbf{Grp}\to \mathbf{Set}$, 
+            \item simplicial set X, $X:\Delta\to \mathbf{Set}$, a contravariant functor
+            \item geometric realization $\geom[\cdot]$, $\geom[\cdot]:\mathbf{sSet}\to \mathbf{CGHaus}$
+        \end{itemize}
+    \end{example}
+
+    The examples stated above will be further discussed in the next chapter.
+
     Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is preserved.
     
     Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram.
