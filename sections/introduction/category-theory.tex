@@ -50,20 +50,20 @@
     
     If to a diagram $\functor{D}$ in $\cat{C}$, we add an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes, $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and colimits. Important examples of limits are products are products, pullbacks, equalizers and terminal objects.
     
-    \begin{figure}[ht!]
+    \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
             \centering
-            \includegraphics[scale=.7]{Functor_cone}
+            \includegraphics[scale=.65]{Functor_cone}
             \caption{}
         \end{subfigure}%
         ~ 
         \begin{subfigure}[b]{0.5\textwidth}
             \centering
-            \includegraphics[scale=.7]{Functor_co-cone}
+            \includegraphics[scale=.65]{Functor_co-cone}
             \caption{}
         \end{subfigure}
-        \caption{Diagrams of a limit and a colimit. Cone and co-cone}
+        \caption{The cone/co-cone (left, right respectively) $(N,\Psi)$ factors/cofactors through the cone $(L,\phi)$ uniquely with $u$, the latter cone is then the limit/colimit}
     \end{figure}
     
     The categorical \defemph{product} can be easily defined in terms of limits. 
@@ -79,7 +79,7 @@
     \begin{figure}[h]
         \centering
         \includegraphics[scale=.7]{Cat_product}
-        \caption{Diagram of product. If Y is some object and for every i in I, $\pi_i:Y\to X_i$ is a morphism, then there exists a unique map $f:Y\to X$ such that for each i in I the diagram commutes.}
+        \caption{Diagram of a product. \textit{If Y is some object and for every i in I, $\pi_i:Y\to X_i$ is a morphism, then there exists a unique map $f:Y\to X$ such that for each i in I the diagram commutes.}}
         \label{fig:product}
     \end{figure}
 
