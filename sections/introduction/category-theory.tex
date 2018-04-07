@@ -50,7 +50,21 @@
     
     If to a diagram $\functor{D}$ in $\cat{C}$, we add an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes, $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and colimits. Important examples of limits are products are products, pullbacks, equalizers and terminal objects.
     
-    %Insert diagrams on limits
+    \begin{figure}[ht!]
+        \centering
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \includegraphics[scale=.7]{Functor_cone}
+            \caption{}
+        \end{subfigure}%
+        ~ 
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \includegraphics[scale=.7]{Functor_co-cone}
+            \caption{}
+        \end{subfigure}
+        \caption{Diagrams of a limit and a colimit. Cone and co-cone}
+    \end{figure}
     
     The categorical \defemph{product} can be easily defined in terms of limits. 
     
@@ -62,8 +76,13 @@
     
     As usual, there is a dual concept to products called a coproduct. Reverse all arrows in the definition of a product and you have a coproduct
     
-    %Insert diagram on coproduct
-    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=.7]{CategoricalProduct-02}
+        \caption{Diagram of product}
+        \label{fig:boat1}
+    \end{figure}
+
     Examples of coproducts is the disjoint union in $\cat{Set}$ as well as its sibling, the disjoint union of topological spaces in $\cat{Top}$. This means that the cartesian product of topological spaces and the disjoint union of topological spaces are dual constructions. The same goes in $\cat{Set}$.
     
     One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}
@@ -103,7 +122,12 @@
     \begin{proof}
         Consider the following diagram of a natural transformation $\Phi$ between $h^A$ and $\functor{F}$ applied to $A$ and an arbitrary object $X \in C$. 
         
-        %insert diagram
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=.4]{Yoneda_lemma_c}
+            \caption{Diagram of natural transformation}
+            \label{fig:boat1}
+        \end{figure}
 
         Let $u$ be the action of $\Phi_A$ on $\idarrow[A]$. By looking at both ways of sending $\idarrow[A]$ to $\functor{F}(X)$ it is realized that the action of $\Phi_X$ on any $f \in \mathrm{Hom}(A, X)$ is given by 
 
