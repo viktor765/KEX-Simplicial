@@ -1,12 +1,40 @@
 \documentclass[../../main.tex]{subfiles}
 
 \begin{document}
+          
+    Simplicial sets can be seen as a generalization of directed multigraphs. Calling the vertices in a multigraph 0-simplices and the edges 1-simplices, each 1-simplex $k_1$ is assigned two 0-simplices $d_0k_1$ and $d_1k_1$, the head and tail vertex of $k_1$ respectively. The maps $d_i$ are called the \emph{face maps} for 1 simplices. This raises the question what exactly an $n$-simplex should be. An $n$-simplex from geometry has $n+1$ vertices and faces, which can all be considered simplices to.
 
-    Construction
-            
-    Face maps
+    \begin{example}[2-simplex]
+        A $2$-simplex is a triangle, which has three faces(sides) and vertices with some structure. In fact that is all the information we need from it for this construction. Each face can be uniquely identified with the vertex opposite of it. Having a set of triangles with vertices denoted by $\{0..2\}$ we therefore have a face map $d_i$ sending every 2-simplex to its $i$'th edge which is a 1-simplex. This can in turn be sent to its $2$ faces which are vertices of a triangle. 
+        
+        Therefore the situation could modeled as follows. There are three sets $X_2$, $X_1$ and $X_0$ of $2$-, $1$- and $0$-simplices with maps $d_i: X_n \to X_{n-1}, i \in \{0,.., n\}$ between them. Some structure is realized by observing that $...$ and $...$ must hold as the vertex at the head of an edge must be at the tail of the following.
+    \end{example}
+
+    In a \emph{simplicial set} $X$(to be defined) there is an $X_n$ for all $n \in \mathbb{N}$, even when we are not modeling any simplices of dimension higher than $n$ for some $n$. As long as there is at least one simplex of lower dimension these will not be empty due to the \emph{degeneracy maps} $s_i$. The following definition will make clear what they are and also describe the structure of a simplex in a simplicial set.
+
+    \begin{definition}\label{simplicial-set}
+        A \defemph{simplicial set} $X$ is a collection of sets $\{X_n\}$ indexed over $\mathbb{N}$ together with maps $d_i: X_n \to X_{n-1}$ and $s_i: X_in\to X_{n+1}$ where $0 \leq i \leq n$, subject to the following axioms called the \emph{simplicial identities}.
+        
+        \begin{enumerate}
+            \item $d_id_j = d_{j-1}d_i$ if $i < j$
+            \item $s_is_j = s_{j+1}s_i$ if $i \leq j$
+            \item $d_is_j = s_{j-1}d_i$ if $i < j$
+            \item $d_js_j = d_{j+1}s_j = id$
+            \item $d_is_j = s_jd_{i-1}$ if $i > j+1$
+        \end{enumerate}
+    \end{definition}
+
+    The elements of $X_n$ are called $n$-simplices. The $d_i$ and $s_i$ are called \defemph{face maps} and \defemph{degeneracy maps}.
     
-    Degeneracy maps
+    This definition is quite cumbersome. Luckily there is a much more elegant definition using the language of category theory that also reveals a lot of the structure of simplicial sets.
+
+    The following definition of a simplicial set is equivalent to $\ref{simplicial-set}$.
+
+    \begin{definition}
+        a \defemph{simplicial set} is a contravariant functor from $\Delta$ to $\cat{Set}$.
+    \end{definition}
+
+    In even shorter terms: a simplicial set is a presheaf on $\Delta$. It can also be said that it is a covariant functor from $\Delta^{op}$ to $\cat{Set}$. More generally replacing $\cat{Set}$ with an arbitrary category of "objects" we have a \defemph{simplicial object}.
     
     Geometric realization
 
