@@ -15,10 +15,12 @@
 
 \addbibresource{references.bib}
 
+\newcounter{thm}[section]
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}{Proposition}[section]
-\newtheorem{example}{Example}[section]
 \newtheorem{definition}[subsection]{Definition}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
 
 \newcommand{\cat}{%
     \mathbf%
