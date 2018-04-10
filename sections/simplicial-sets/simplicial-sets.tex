@@ -26,7 +26,31 @@
 
     The elements of $X_n$ are called $n$-simplices. The $d_i$ and $s_i$ are called \defemph{face maps} and \defemph{degeneracy maps}. A simplex that can be written $s_ix_n$ for some $x_n \in X_n$ is called a \defemph{degenerate simplex}.
     
-    This definition of a simplicial set is quite cumbersome. Luckily, there is a much more elegant definition in the language of category theory that also reveals a lot of the structure of simplicial sets.
+    This definition of a simplicial set is quite cumbersome. Luckily, there is a much more elegant definition in the language of category theory that also reveals a lot of the structure of simplicial sets. We will first have to introduce the category $\Delta$.
+
+    \begin{definition}[The simplex category $\Delta$]
+        The category $\Delta$ consists of all finite ordinals $[n] = \{0, .., n\}$ with arrows being all monotone(order preserving) maps.
+    \end{definition}
+
+    For $[n]$ and $[n-1]$ in $\Delta$ there are monotone maps $d^i: [n-1] \to [n]$, the monotone injection that misses $i \leq n$, and $s^i: [n] \to [n-1]$, the monotone surjection sending $i$ and $i+1$ to $i \leq n-1$. 
+
+    %insert figure of d^i and s^i
+
+    An important property of $\Delta$ is the following property of these.
+
+    \begin{proposition}
+        Any morphism $f: [m] \to [n]$ in $\Delta$ can be written uniquely on the form
+
+        \begin{equation*}
+            f = d^{i_1}...d^{i_k}s^{j_1}...s^{j_l}
+        \end{equation*},
+
+        where $i_k < ... < i_1$ and $j_1 < ... < j_l$ and $n - m = l - k$
+    \end{proposition}
+
+    \begin{proof}
+        Let $i_1, ..., i_k$ be the elements of $[n] \setminus \Ima f$ in reverse order and $j_1, ..., j_l$ the elements of $\{j \in [m]: f(j) = f(j+1)\}$ in order. It is realized that this construction has the property $f = d^{i_1}...d^{i_k}s^{j_1}...s^{j_l}$ and is also unique.
+    \end{proof}
 
     The following definition of a simplicial set is equivalent to $\ref{simplicial-set}$.
 
