@@ -151,8 +151,25 @@
         \end{figure}
         Should all the vertices, endpoints, be identified the diagram realizes as a sphere. In figure \ref{fig:squares} the degenerate simplices are omitted as is often the case. On a side note the simplicial complex would have needed additional 2-simplices as they would have need to remain being triangles after the realization as a torus.
     \end{example}
-    Product of simplicial sets
-    Geometric realization is CW-complex
+
+    As for topological spaces a product of simplicial sets can be realized as follows.
+
+    \begin{definition}
+        If $X$ and $Y$ are simplicial sets then their product $X\times Y$ is defined as 
+        \begin{itemize}
+            \item $(X\times Y)_n= X_n\times Y_n= \{(x,y):x\in X_n,\; y \in Y_n \}$
+            \item if $(x,y)\in (X\times Y)_n$ then $d_i(x,y)=(d_ix,d_iy)$ and $s_i(x,y)=(s_ix,s_iy)$
+        \end{itemize}
+    \end{definition}
+    
+    The face and degeneracy maps, $d_i,\; s_i$ respectively, inherit from the relations in the definition \ref{simplicial-set}.There are projection maps in analogue to the product of topological spaces, $p_1:X\times Y \to X,\; p_2:X\times Y \to Y$, simplicial morphisms. As the definition is quite direct questions arise of its validity but is ratified by the following proposition.
+
+
+    Geometric realization is CW-complex %lägg vid geom
+    
     Product of geometric realization
+
+    %Contrary to simplicial complex who cannot undergo such a binary operation in combination of the geometric realization.
+
 
 \end{document}
