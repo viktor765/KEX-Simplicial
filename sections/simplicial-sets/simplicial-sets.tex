@@ -59,7 +59,7 @@
 
     An important property of $\Delta$ is the following property of these.
 
-    \begin{proposition}
+    \begin{proposition}\label{uni-sim}
         Any morphism $f: [m] \to [n]$ in $\Delta$ can be written uniquely on the form
 
         \begin{equation*}
@@ -93,7 +93,7 @@
         \end{itemize}
     \end{definition}
     
-    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second equality relation one gets the fat geometric realization, an, for this report, uninteresting concept.  
+    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second equality relation one gets the fat geometric realization, an, for this report, uninteresting concept. For reference $\coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]= \bigGeom X$.
 
     The following proposition and proof is often omitted and taken for granted, however, it does provide insight and intuition into the field of simplicial sets. 
 
@@ -121,9 +121,13 @@
     
     Especially the next proposition connects algebraic topology to the theory of simplicial sets.
 
-    \begin{proposition}
-        If $X$ is simplicial set then $\geom[X]$ is CW-complex with one n-cell for each nondegenrate n-simplex of $X$ 
+    \begin{proposition}\label{is-CW}
+        If $X$ is simplicial set then $\geom[X]$ is CW-complex with one n-cell for each non-degenerate n-simplex of $X$ 
     \end{proposition}
+
+    A point $(x_n,u_n)\in \bigGeom X$ is non-degenerate if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A sketch of the proof follows.  
+
+    For simplicial sets the realization as an topological object is complicated by the "glueing" through degeneracy maps, face maps are okay. However, by defining a function $\phi\circ\lambda (x)$ sending each point, $x$, to a unique non-degenerate point such "glueing" is bypassed. The function is defined with the help of lemma \ref{uni-sim} $\lambda$ and the fact that there is a least dimensional simplex for which $u_n$ is interior $\phi$. These functions rely on the equivalence relation stated in the geometric realization and thus any two equivalent points are sent to the same non-degenerate point implying uniqueness. 
 
     As often is the case some examples might shed light into how surprisingly simply the theory captures complex topological spaces.
 
@@ -200,7 +204,9 @@
     \begin{proposition}
         If $X$ and $Y$ are simplicial sets then $\geom[X\times Y]\cong \geom[X]\times \geom[Y]$ in the category $\cat{CGHaus}$.
     \end{proposition}
-    %proof?
+
+    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to get so called representatives and then establishing 
+
     This does not hold for simplicial complexes, a key difference. In the general case one requires either that the simplicial sets are countable or that one of their geometric realizations $\geom[X],\; \geom[Y]$ is locally finite for the geometric realization to commute with the product. 
 
 
