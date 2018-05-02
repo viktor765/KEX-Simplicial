@@ -11,5 +11,5 @@
 *.synctex
 *.synctex.gz
 *.synctex(busy)
-.vscode/
+settings.json
 subfiles.sty

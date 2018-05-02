@@ -1,0 +1,69 @@
+// cSpell Settings
+{
+    // Version of the setting file.  Always 0.1
+    "version": "0.1",
+    // language - current active spelling language
+    "language": "en",
+    // words - list of words to be always considered correct
+    "words": [
+        "abelian",
+        "abelianization",
+        "adjunctions",
+        "barycenter",
+        "bijection",
+        "bijections",
+        "coanalogy",
+        "codegeneracy",
+        "coface",
+        "colimit",
+        "colimits",
+        "combinatoric",
+        "contravariance",
+        "contravariant",
+        "coproduct",
+        "coproducts",
+        "covariant",
+        "fdb",
+        "functor",
+        "functorial",
+        "functors",
+        "githubusercontent",
+        "homeomorphic",
+        "homeomorphism",
+        "homeomorpihcally",
+        "homomorphism",
+        "homomorphisms",
+        "injective",
+        "latexmk",
+        "mkdirp",
+        "morphism",
+        "morphisms",
+        "multigraph",
+        "multigraphs",
+        "neighborhood",
+        "polytopes",
+        "postaction",
+        "preimage",
+        "preimages",
+        "presheaf",
+        "qoutient",
+        "simplicial",
+        "skeleta",
+        "streetsidesoftware",
+        "subbase",
+        "subcover",
+        "subfiles",
+        "surjection",
+        "synctex",
+        "tsmerge",
+        "visualstudio",
+        "vsmarketplacebadge",
+        "yoneda"
+    ],
+    // flagWords - list of words to be always considered incorrect
+    // This is useful for offensive words and common spelling errors.
+    // For example "hte" should be "the"
+    "flagWords": [
+        "hte"
+    ]
+}
