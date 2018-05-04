@@ -3,16 +3,27 @@
 \begin{document}
 
     Category theory is the language needed to give simplicial/cyclic sets a simple definition. It is also an essential part of the language of algebraic topology. It begins with the elementary definitions of categories, functors, natural transformations and adjunctions.
-        
+
     \begin{definition}
-        A \defemph{category} $\cat{C}$ is a collection of \defemph{objects} $ob(\cat{C})$ and one of \defemph{arrows} or \defemph{morphisms} $arr(\cat{C}), \to$ between objects. For every arrow $f$, there is an object $\domain{f} = X$, its \defemph{domain}, and $\codomain{f} = Y$, its \defemph{codomain}. We say that an arrow points from $\domain{f}$ to $\codomain{f}$, $f:X\to Y$. For every pair of arrows $f, g$ such that $\domain{f} = \codomain{g}$ and $Z = dom(g)$ there is a composition of arrows $f \circ g:Z\to X\to Y$ (often written omitting $\circ$) that fulfills the following axioms.
+        A \defemph{category} is a collection of objects $ob(\cat{C})$ such that for every pair of objects $x, y \in ob(\cat{C})$ there is a collection $hom(x, y)$ of \defemph{arrows} or \defemph{morphisms} from $x$ to $y$. These are said to have $x$ as their \defemph{domain} and $y$ as \defemph{codomain}. If $f \in hom(A, B)$ it is often written $f: x \to y$ and $\domain{f} = x, \codomain{f} = y$.
         
+        For all $x, y, z \in ob(\cat{C})$ there is a composition of arrows 
+        
+        \begin{align*}
+            \circ: hom(x, y) \times hom(y, z) &\to hom(x, z) \\ 
+            f, g &\mapsto g \circ f = gf
+        \end{align*}
+        
+        that fulfills the following axioms.
+
         \begin{enumerate}
-            \item a) $\domain{fg} = \domain{g}$ \\
-                b) $\codomain{fg} = \codomain{f}$
-            \item Associativity: (fg)h = f(gh) for all f,g,h where defined
+            \item Associativity: (fg)h = f(gh) for all arrows f,g,h where composition is defined
             \item Identity: For every $c \in ob(C)$ there is an arrow $\idarrow[c]: c \to c$ such that $f \circ id_C = f$ and $g \circ id_c = g$ for all arrows $f, g$ where this composition is defined.
         \end{enumerate}
+    \end{definition}
+
+    \begin{definition}
+        If $hom(x, y)$ is a set for every choice of $x$ and $y$, $\cat{C}$ is \defemph{locally small}. If also $ob(\cat{C})$ is a set, \defemph{C} is \defemph{small}. 
     \end{definition}
     
     Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is invariant.
@@ -46,7 +57,7 @@
 
     These examples are illustrative and are but a small fraction of functors. The forgetful functor is a general notion, simply leaving out or "forgetting" structure can be done in many cases. The last example stated above might seem roundabout and will be properly treated next. 
     
-    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. For a category where both $ob(\cat{I})$ and $arr(\cat{I})$ are sets then $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A commutative diagram is defined such that all directed paths with identical start and end points lead to the same results by composition. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
+    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. If $\cat{I} is$ small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A commutative diagram is defined such that all directed paths with identical start and end points lead to the same results by composition. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
     If to a diagram $\functor{D}$ in $\cat{C}$, we add an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes, $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and colimits. Important examples of limits are products are products, pullbacks, equalizers and terminal objects.
     
