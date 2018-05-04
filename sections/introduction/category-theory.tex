@@ -9,7 +9,7 @@
         
         \begin{enumerate}
             \item a) $\domain{fg} = \domain{g}$ \\
-                b) $\codomain{fg} = \codomain{fg}$
+                b) $\codomain{fg} = \codomain{f}$
             \item Associativity: (fg)h = f(gh) for all f,g,h where defined
             \item Identity: For every $c \in ob(C)$ there is an arrow $\idarrow[c]: c \to c$ such that $f \circ id_C = f$ and $g \circ id_c = g$ for all arrows $f, g$ where this composition is defined.
         \end{enumerate}
@@ -18,7 +18,7 @@
     Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is invariant.
 
     \begin{example}
-        The category of topological spaces, usually denoted $\mathbf{Top}$, with objects being topological spaces and morphisms being continuous functions. A variant could be to limit spaces to compactly generated Hausdorff spaces usually referred to as $\mathbf{CGHaus}$.
+        An example of a category would be the category of topological spaces, usually denoted $\cat{Top}$, with objects being topological spaces and morphisms being continuous functions. Another example of a category would be $\cat{hTop}$ with the same objects but homotopy equivalence classes as morphisms. Yet another category would be $\cat{Haus}$ where instead the objects are topological spaces with the Hausdorff property and continuous functions as morphisms.
     \end{example}
 
     \begin{definition}
@@ -38,13 +38,13 @@
     \begin{example}\label{functor_exmp}
         A few examples of functors include:
         \begin{itemize}
-            \item the forgetful functor $G$, which forgets structure, e.g. $G:\mathbf{Grp}\to \mathbf{Set}$ taking a group to its underlying set
-            \item simplicial set $X$, $X:\Delta\to \mathbf{Set}$, a contravariant functor
-            \item geometric realization $\geom[\cdot]$, $\geom[\cdot]:\mathbf{sSet}\to \mathbf{CGHaus}$
+            \item the forgetful functor $G$, which forgets structure, e.g. taking a group to its underlying set and group homomorphisms to their underlying function
+            \item $\mathcal{P}$ is a functor which maps a set to its power set and functions $f:X\to Y$ to the map which sends $V\subseteq X $ to $f(V)\subseteq Y$. 
+            \item if B and C are categories then a diagram of shape B in C is a covariant functor $D:B\to C$
         \end{itemize}
     \end{example}
 
-    The two latter examples stated above will be further discussed in the next chapter, their concise statements are deceptive and require a more elaborate treatise. Somewhat easier to grasp is the following.
+    These examples are illustrative and are but a small fraction of functors. Further study of the forgetful functor is included as it arises in combination with an adjoint functor of interest in the final section. The last example stated above might seem roundabout and will be properly treated next. 
     
     Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A commutative diagram is defined such that all directed paths with identical start and end points lead to the same results by composition. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
