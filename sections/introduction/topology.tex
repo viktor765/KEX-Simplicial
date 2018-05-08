@@ -23,7 +23,7 @@
 
     A proof of this proposition is quite negligible however it can be found in most introductory texts to topology and especially \cite{armstrong-basictop}.
     
-    Continuity of a function, $f$, between topological spaces, $X$ and $Y$, $f:X\to Y$ is defined such that the inverse image of each open set of Y is open in X. One can also define continuity through the use of closed sets and a continuous function is usually called a map. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same. Many of the following definitions depend partially on continuous functions, it is a core concept.
+    A function, $f$, between topological spaces, $X$ and $Y$, $f:X\to Y$ is said to be \defemph{continous} if the inverse image of each open set of $Y$ is open in $X$. One can also define continuity through the use of closed sets and a continuous function is usually called a map. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same. %Many of the following definitions depend partially on continuous functions, it is a core concept.
     
     A base for a topological space is a collection of open sets such that every open set is a union of members of the base. This is denoted as the base generating the topology.
     
@@ -31,13 +31,17 @@
         For a nonempty collection of subsets of a set X, $B$, if $B$ covers X and the intersection of any finite number of members of $B$ is always in $B$ then $B$ is a \defemph{base} for a topology on X.
     \end{definition}
     
-    Any subset $A$ of $\mathcal{P}(X)$ can be used to generate a topology on $X$. Take the sets of $A$ to be open and add all sets that can be created by finite intersection of these(consider the empty intersection to be $X$) and then all unions of those. Call this collection $\uptau$. It is the coarsest topology on $X$ containing $A$ as a subset, meaning that any other such topology will contain $A$ as a subset. We say that $A$ is a \defemph{subbase} of $\uptau$ and that $A$ generates $\uptau$. 
+    Any subset $A \subseteq \mathcal{P}(X)$(where $\mathcal{P}(X)$ will denote the power set of $X$) can be used to generate a topology on $X$. Take the sets of $A$ to be open and add all sets that can be created by finite intersection of these(consider the empty intersection to be $X$) and then all unions of those. Call this collection $\uptau$. It is the coarsest topology on $X$ containing $A$ as a subset, meaning that any other such topology will contain $A$ as a subset. We say that $A$ is a \defemph{subbase} of $\uptau$ and that $A$ generates $\uptau$.
     
-    If $A$ generates the topology $\uptau$ by only taking unions, then $A$ is called a \defemph{base} for. A subbase forms a base for the space it generates by taking all finite intersections.
+    If $A$ generates the topology $\uptau$ by only taking unions, then $A$ is called a \defemph{base} for $\uptau$. A subbase forms a base for the space it generates by taking all finite intersections.
+
+    In topology the notion of a \textit{coarse} topology $\uptau$ on $X$ means that it is small. More exactly, $\uptau'$ is coarser than $\uptau$ if $\uptau' \subset \uptau$. In the opposite sense, a \textit{fine} topology is big.
     
     \begin{definition}
-        Given that a space X can be written as a cartesian product as $$X=\prod_{i\in I}^{}X_i,$$ for some index set $I$, the \defemph{product topology} on $X$ is defined to be the coarsest topology for which the canonical projections $p_i:X\to X_i$ are continuous. This results in open sets of the form $ \prod_{i\in I}U_i$ and their unions where each $U_i$ is open in $X_i$ and $U_i \ne X_i$ for only finitely many $i\in I$. The reason for this is that  base element is achieved for each inverse map $p_i$ and generating the rest via finite intersections thus the coarsest.
+        The cartesian product $$X=\prod_{i\in I}^{}X_i,$$ of topological spaces $X_i$ for some index set $I$, can be given a topology. The \defemph{product topology} on $X$ is defined to be the coarsest topology for which the canonical projections $p_i:X\to X_i$ are continuous. This results in open sets of the form $ \prod_{i\in I}U_i$ and their unions where each $U_i$ is open in $X_i$ and $U_i \ne X_i$ for only finitely many $i\in I$. %The reason for this is that the base element is achieved for each inverse map $p_i$. These then generate the rest via finite intersections and arbitrary unions thus the coarsest.
     \end{definition}
+
+    The fact that this is the coarsest topology possible under the continuity requirements is realized from the fact that the preimage of an open set $A_i \subseteq X_i$ under $p_i$ is $$p_i^{-1}(A_i) = A_i \times \prod_{j \in I, j \ne i}^{}X_j$$. The coarsest topology including these is achieved by letting them constitute the subbase. Therefore, only finite intersections are taken which means the open sets mentioned before taking all unions.
     
     This can be realized observing the preimages of open sets $O_i \subseteq X_i$ with respect to $p_i$. These will be the cartesian product of the full spaces except for $O_i$ taking the place of $X_i$. Since only these sets are required in the topology for the continuity of $p_i$ they form a subbase. As we only take finite intersections, only finitely many $X_i$ are replaced by open proper subsets of $X_i$ in the base.
     
