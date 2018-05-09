@@ -10,7 +10,7 @@
 
     A set together with a topology on it is called a topological space, reflecting the spatial notion. The spatial information of a topology concerns how "close" to each other different points can be considered depending on how strongly they can be separated by open sets and also in how parts of the space can be \textit{disconnected}, to be defined. The same set can thus have different topologies resulting in different framework, e.g. the real line and the cantor set can be thought of as the same set with different topologies. 
             
-    Extremes exist such as when every subset is an open set, called the discrete topology, or when none are, the trivial topology. A subset is called closed if its complement is open and vice versa, the property of closedness is determined either through closure, limit points or boundary points. A \defemph{limit point} of a subset $B$ of a topological space $X$ is a point $p$, for which every neighborhood contains at least one point of $B$. This means especially that every point in $B$ is a limit point of $B$. The set of all limit points of $B$ is called its \defemph{closure}, denoted $\closure{B}$. The \defemph{interior} of a set B on the other hand is the union of all open sets contained in $B$, usually denoted $\interior{B}$. Finally, there is the \defemph{boundary} of $B$ with notation $\boundary{B}$, defined as $\boundary{B} = \closure{B} \setminus \interior{B}$.
+    Extremes exist such as when every subset is an open set, called the \defemph{discrete topology}, or when none are except the full space and empty set, the \defemph{trivial topology}. A subset is called \defemph{closed} if its complement is open and vice versa, the property of closedness is determined either through closure, limit points or boundary points. A \defemph{limit point} of a subset $B$ of a topological space $X$ is a point $p$, for which every neighborhood contains at least one point of $B$. This means especially that every point in $B$ is a limit point of $B$. The set of all limit points of $B$ is called its \defemph{closure}, denoted $\closure{B}$. The \defemph{interior} of a set B on the other hand is the union of all open sets contained in $B$, usually denoted $\interior{B}$. Finally, there is the \defemph{boundary} of $B$ with notation $\boundary{B}$, defined as $\boundary{B} = \closure{B} \setminus \interior{B}$.
     
     \begin{proposition}
         The following are equivalent for a set B:
@@ -23,52 +23,59 @@
 
     A proof of this proposition is quite negligible however it can be found in most introductory texts to topology and especially \cite{armstrong-basictop}.
     
-    A function, $f$, between topological spaces, $X$ and $Y$, $f:X\to Y$ is said to be \defemph{continous} if the inverse image of each open set of $Y$ is open in $X$. One can also define continuity through the use of closed sets and a continuous function is usually called a map. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same. %Many of the following definitions depend partially on continuous functions, it is a core concept.
+    A function, $f$, between topological spaces, $X$ and $Y$, $f:X\to Y$ is said to be \defemph{continous} if the inverse image of each open set of $Y$ is open in $X$. One can also define continuity through the use of closed sets and a continuous function is usually called a map. A homeomorphism is a function that is continuous, one-to-one, onto and has a continuous inverse. As such a homeomorphism $h:X\to Y$ allows us to think of the two topological spaces $X, Y$ as the same.
     
-    A base for a topological space is a collection of open sets such that every open set is a union of members of the base. This is denoted as the base generating the topology.
-    
-    \begin{definition}
-        For a nonempty collection of subsets of a set X, $B$, if $B$ covers X and the intersection of any finite number of members of $B$ is always in $B$ then $B$ is a \defemph{base} for a topology on X.
-    \end{definition}
+    In topology the notion of a \textit{coarse} topology $\uptau$ on $X$ means that it is small. More exactly, $\uptau'$ is coarser than $\uptau$ if $\uptau' \subset \uptau$. In the opposite sense, a \textit{fine} topology is big.
     
     Any subset $A \subseteq \mathcal{P}(X)$(where $\mathcal{P}(X)$ will denote the power set of $X$) can be used to generate a topology on $X$. Take the sets of $A$ to be open and add all sets that can be created by finite intersection of these(consider the empty intersection to be $X$) and then all unions of those. Call this collection $\uptau$. It is the coarsest topology on $X$ containing $A$ as a subset, meaning that any other such topology will contain $A$ as a subset. We say that $A$ is a \defemph{subbase} of $\uptau$ and that $A$ generates $\uptau$.
     
     If $A$ generates the topology $\uptau$ by only taking unions, then $A$ is called a \defemph{base} for $\uptau$. A subbase forms a base for the space it generates by taking all finite intersections.
-
-    In topology the notion of a \textit{coarse} topology $\uptau$ on $X$ means that it is small. More exactly, $\uptau'$ is coarser than $\uptau$ if $\uptau' \subset \uptau$. In the opposite sense, a \textit{fine} topology is big.
     
     \begin{definition}
-        The cartesian product $$X=\prod_{i\in I}^{}X_i,$$ of topological spaces $X_i$ for some index set $I$, can be given a topology. The \defemph{product topology} on $X$ is defined to be the coarsest topology for which the canonical projections $p_i:X\to X_i$ are continuous. This results in open sets of the form $ \prod_{i\in I}U_i$ and their unions where each $U_i$ is open in $X_i$ and $U_i \ne X_i$ for only finitely many $i\in I$. %The reason for this is that the base element is achieved for each inverse map $p_i$. These then generate the rest via finite intersections and arbitrary unions thus the coarsest.
+        The cartesian product $$X=\prod_{i\in I}^{}X_i,$$ of topological spaces $X_i$ for some index set $I$, can be given a topology. The \defemph{product topology} on $X$ is defined to be the coarsest topology for which the canonical projections $p_i:X\to X_i$ are continuous. This results in open sets of the form $ \prod_{i\in I}U_i$ and their unions where each $U_i$ is open in $X_i$ and $U_i \ne X_i$ for only finitely many $i\in I$.
     \end{definition}
 
     The fact that this is the coarsest topology possible under the continuity requirements is realized from the fact that the preimage of an open set $A_i \subseteq X_i$ under $p_i$ is $$p_i^{-1}(A_i) = A_i \times \prod_{j \in I, j \ne i}^{}X_j$$. The coarsest topology including these is achieved by letting them constitute the subbase. Therefore, only finite intersections are taken which means the open sets mentioned before taking all unions.
     
-    This can be realized observing the preimages of open sets $O_i \subseteq X_i$ with respect to $p_i$. These will be the cartesian product of the full spaces except for $O_i$ taking the place of $X_i$. Since only these sets are required in the topology for the continuity of $p_i$ they form a subbase. As we only take finite intersections, only finitely many $X_i$ are replaced by open proper subsets of $X_i$ in the base.
-    
+    Another common operation on sets that is further expanded in topology is the disjoint union, whose definition will be revisited. 
+
     \begin{definition}
-        A \defemph{disjoint union}, $\coprod$, of a family of sets is a modified union operator which indexes elements according to the origin set. 
+        A \defemph{disjoint union}, $\coprod$, of a family of sets is a modified union operator which indexes elements according to the origin set. For an indexed collection of sets $\{X_i\}_{i \in I}$ it is explicitly:
+
+        \begin{equation*}
+            \coprod_{i \in I} X_i = \{(x, i): x \in X_i\}
+        \end{equation*}
     \end{definition}
     
     In topology one can then construct the disjoint union topology, in coanalogy to products, as follows. Let $\{X_i : i \in I\}$, a family of topological spaces, where the disjoint union is called $X$. The disjoint union topology is defined as the finest topology for which the canonical injections, $\varsigma_i :X_i\to X, \: \forall\: i \in I$ are continuous.
     
-    The quotient topology or identification topology is constructed as follows. For a topological space X and partition $\mathcal{P}$ the points of a new space Y are the members of $\mathcal{P}$ with $\pi:X\to Y$, the canonical projection map, this achieves the largest topology on Y for which $\pi$ is continuous.
+    The \defemph{quotient topology} or \defemph{identification topology} is constructed as follows. For a topological space X and with a partition $\mathcal{P}$, letting $\pi:X \to Y$ be the canonical projection a topology on $\mathcal{P}$ is given by letting $A \in \mathcal{P}$ be open if $\pi^{-1}(A)$ is open. This achieves the finest topology on Y for which $\pi$ is continuous.
     
-    A topological space X is said to be Hausdorff if all distinct points in X are pairwise neighborhood-separable. Most studied topological spaces are Hausdorff, for instance the real numbers, and products of Hausdorff spaces preserves the property however a quotient space of a Hausdorff space need not be Hausdorff. In addition to but less important than what was just being discussed there are several separation axioms, some weaker, relating to points and their distinction. 
+    A topological space X is said to be Hausdorff if all distinct points in X are pairwise neighborhood-separable, that is
     
-    In conjunction with Hausdorff one often sees the term compact. A topological space, $X$, is compact if each of its open covers has a finite subcover, where a cover is a union of sets which contain $X$ as a subset. 
+    \begin{definition}
+        A topological space $X$ is called \defemph{Hausdorff} is for each pair $x, y \in X$ there exists two disjoint open sets $N_x$ and $N_y$ such that $x \in N_x$, $y \in N_y$.
+    \end{definition}
     
-    A \textbf{disconnected} topological space is such if it is the union of two disjoint nonempty sets, whereas a connected cannot be expressed as such. 
+    Most studied topological spaces are Hausdorff, for instance the real numbers, and products of Hausdorff spaces preserves the property however a quotient space of a Hausdorff space need not be Hausdorff. In addition to but less important than what was just being discussed there are several separation axioms, some weaker, relating to points and their distinction. 
+    
+    In conjunction with Hausdorff one often sees the term compact. A topological space, $X$, is compact if each of its open covers has a finite subcover, where a cover is a collection of sets whose union is $X$.
 
-    Lastly a concept that is only lightly touched is homotopy, in which there exists between continuous functions f and g from topological spaces X and Y a continuous deformation. Formally
+    A topological space is called \defemph{disconnected} if it can be separated into two disjoint open sets. Equivalently, it has a proper clopen(open and closed) subset. A \defemph{connected} space is one that is not disconnected.
+
+    Lastly, a concept that is crucial to the theory of cyclic sets is \defemph{homotopy}. Roughly, two continuous functions $f, g: X \to Y$ are homotopic if they can be deformed continuously to one another.
 
     \begin{definition}
-        A \defemph{homotopy} between continuous functions $f,g: X\to Y$, X and Y topological spaces, is defined as a continuous function  $H : X \times [0,1] \to Y$ from the product of the space X with the unit interval [0,1] to Y such that, if $x \in X$ then $H(x,0) = f(x)$ and $H(x,1) = g(x)$.
+        A \defemph{homotopy} between continuous functions $f,g: X\to Y$, is defined as a continuous function  $H : X \times [0,1] \to Y$ from the product of the space X with the unit interval [0,1] to Y such that, if $x \in X$ then $H(x,0) = f(x)$ and $H(x,1) = g(x)$.
     \end{definition}
 
-    Homotopy type or homotopy equivalent being a weaker notion then homeomorphism in which you soften the requirement of the composition being the identity to being homotopic to the identity. 
+    Homeomorphism between topological spaces is an equivalence relation that signifies a very strong resemblance between these. There is a weaker notion called \defemph{homotopy equivalence} in which you soften the requirement of the composition being the identity to being homotopic to the identity.
 
     \begin{definition}
         Let $X$ and $Y$ be topological spaces. If there exist continuous maps $f : X \to Y$ and $g : Y \to X$ such that $g \circ f$ is homotopic to the identity map $id_X$ and $f \circ g$ is homotopic to $id_Y$. The spaces are then called \defemph{homotopy equivalent} or being of the same \defemph{homotopy type}.
     \end{definition}
 
+    \begin{example}
+        Consider the complex circle $S^1$ and a single point $*$. Let $f: \{*\} \to S^1$ map $*$ to $f(*) = 1 \in S^1$ and $g: S^1 \to \{*\}$ be the constant map. Now $f \circ g: S^1 \to S^1$ is given by $(f \circ g)(x) = 1$. Let $H: S^1 \times [0, 1] \to S^1$ be given by $H(x, t) = t + (1-t)x$. It is then seen that $H(-, 0) = id_{}$ and $H(-, 1) = f \circ g$ while $g \circ f = id_{\{*\}}$ itself which shows that $S^1$ and $\{*\}$ are homotopy equivalent.
+    \end{example}
 \end{document}
