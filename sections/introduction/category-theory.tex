@@ -96,7 +96,7 @@
 
     Examples of coproducts is the disjoint union in $\cat{Set}$ as well as its sibling, the disjoint union of topological spaces in $\cat{Top}$. This means that the cartesian product of topological spaces and the disjoint union of topological spaces are dual constructions. The same goes in $\cat{Set}$.
     
-    One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}
+    One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
     
     \begin{definition}
         Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of hom-sets, $$\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X)$$, which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
