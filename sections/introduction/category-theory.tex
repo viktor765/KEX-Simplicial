@@ -40,18 +40,16 @@
             \item $\functor{F}(\idarrow[c]) = \idarrow[\functor{F}(c)]$
             \item $\functor{F}(fg) = \functor{F}(f) \circ \functor{F}(g)$ \label{covar2}
         \end{enumerate}
-        
-        If \ref{covar1} and \ref{covar2} are reversed to 
-        
-        \begin{enumerate}
-            \item [\ref{covar1}*.] $\domain{\functor{F}(f)} = \functor{F}(c), \codomain{\functor{F}(f)} = \functor{F}(b)$ \label{cov1}
-            \item [\ref{covar2}*.] $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$ \label{cov2}
-        \end{enumerate}
-
-        , then $\functor{F}$ is \defemph{contravariant}.
     \end{definition}
+
+    If \ref{covar1} and \ref{covar2} are reversed to
     
-    The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$.
+    \begin{enumerate}
+        \item [\ref{covar1}*.] $\domain{\functor{F}(f)} = \functor{F}(c), \codomain{\functor{F}(f)} = \functor{F}(b)$ \label{cov1}
+        \item [\ref{covar2}*.] $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$ \label{cov2}
+    \end{enumerate}
+
+    , $\functor{F}$ is instead \defemph{contravariant}. The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$.
 
     \begin{example}\label{functor_exmp}
         A few examples of functors include:
