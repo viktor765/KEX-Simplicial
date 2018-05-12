@@ -44,7 +44,7 @@
         If \ref{cov} is reversed to $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$, then $\functor{F}$ is \defemph{contravariant}.
     \end{definition}
     
-    The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$,.
+    The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$.
 
     \begin{example}\label{functor_exmp}
         A few examples of functors include:
@@ -57,7 +57,7 @@
 
     These examples are illustrative and are but a small fraction of functors. The forgetful functor is a general notion, simply leaving out or "forgetting" structure can be done in many cases. The last example stated above might seem roundabout and will be properly treated next. 
     
-    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor from an index category $\cat{I}$. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A commutative diagram is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|Hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
+    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor $\functor{D}: \cat{I} \to \cat{C}$, where $\cat{I}$ is called an \emph{index category}. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A \defemph{commutative diagram} is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
     If to a diagram $\functor{D}$ in $\cat{C}$, we add an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes, $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and colimits. Important examples of limits are products are products, pullbacks, equalizers and terminal objects.
     
@@ -83,11 +83,11 @@
         Given objects $\{c_i\}_{i \in I}$ in $\cat{C}$, their \defemph{product} is a limit over the diagram containing all $c_i$ and no arrows other than their identities.
     \end{definition}
     
-    Examples of products is the cartesian product in $\cat{Set}$, the topological product in $\cat{Top}$ and the direct product in $\cat{Grp}$. In these categories, any set of objects has a product with these explicit constructions. The main reason of having the topological product defined the way it is(finitely many $O_i \neq X_i$) is to make it the categorical product in $\cat{Top}$. Would we not have this requirement(aka the box topology on $X$) it would merely be a cone over the discrete diagram of all $c_i$.
+    Examples of products is the cartesian product in $\cat{Set}$, the topological product in $\cat{Top}$ and the direct product in $\cat{Grp}$. In these categories, any set of objects has a product with these explicit constructions. The main reason of having the topological product defined the way it is(finitely many $O_i \neq X_i$) is to make it the categorical product in $\cat{Top}$. Would we not have this requirement(also known as the \emph{box topology} on $X$) it would merely be a cone over the discrete diagram of all $c_i$.
     
-    As usual, there is a dual concept to products called a coproduct. Reverse all arrows in the definition of a product and you have a coproduct
+    As usual, there is a dual concept to products called a coproduct. Reverse all arrows in the definition of a product and one has a coproduct
     
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
         \includegraphics[scale=.7]{Cat_product}
         \caption{Diagram of a product. \textit{If Y is some object and for every i in I, $\pi_i:Y\to X_i$ is a morphism, then there exists a unique map $f:Y\to X$ such that for each i in I the diagram commutes.}}
@@ -102,14 +102,16 @@
         Given functors $\functor{A}: A \to C$, $\functor{B}: B \to C$, the category $(\functor{A} \downarrow \functor{B})$ has its objects made up up triplets $(a, b, f)$ where $a \in A$, $b \in B$ and $f \in hom(\functor{A}(a), \functor{B}(b))$ and arrows between $(a, b, f)$ and $(a', b', f')$ made up of commutative diagrams of the following type.
     \end{definition}
 
-    \[
-        \begin{tikzcd}
-            \functor{A}(a) \arrow[r, "f"] \arrow[d, "\functor{A}(\phi)"]
-            & \functor{B}(b) \arrow[d, "\functor{B}(\psi)"] \\
-            \functor{A}(a') \arrow[r, "f'"]
-            & \functor{B}(b')
-        \end{tikzcd}
-    \]
+    \begin{figure}[H]
+        \[
+            \begin{tikzcd}
+                \functor{A}(a) \arrow[r, "f"] \arrow[d, "\functor{A}(\phi)"]
+                & \functor{B}(b) \arrow[d, "\functor{B}(\psi)"] \\
+                \functor{A}(a') \arrow[r, "f'"]
+                & \functor{B}(b')
+            \end{tikzcd}
+        \]
+    \end{figure}
     
     One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
     
@@ -117,11 +119,11 @@
         Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of hom-sets, $$\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X)$$, which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
     \end{definition}
     
-    An example of adjunctions are letting $\functor{G}$ be the forgetful functor mapping $\cat{Grp} \to \cat{Set}$. Its right adjoint is then $\functor{F}: \cat{Set} \to \cat{Cat}$ which sends a set $A$ to the free group on $A$. The bijections arises from the fact that a group homomorphism is completely described by its action on the generators.
+    An example of adjunctions are letting $\functor{G}$ be the forgetful functor mapping $\cat{Grp} \to \cat{Set}$. Its left adjoint is then $\functor{F}: \cat{Set} \to \cat{Grp}$ which sends a set $A$ to the free group on $A$. The bijections arise from the fact that a group homomorphism is completely described by its action on the generators.
     
     Another example is the abelianization functor $\functor{F}: \cat{Grp} \to \cat{Ab}$. It is left adjoint to the forgetful functor $\functor{G}: \cat{Ab} \to \cat{Grp}$. This is due to the fact that the commutator subgroup $[G, G]$ of any group $G$ needs to lie in the kernel of any homomorphism into an abelian group. This means that any such homomorphism will factor uniquely through the projection $G$ onto $G^{ab}$.
     
-    For every set $X$, there are two canonical ways of defining a on it, the trivial topology and the discrete topology. These are in fact functors $\functor{F}: \cat{Set} \to \cat{Top}$. Assigning the discrete topology to $X$ by $\functor{F}$ will mean that any map \emph{from} it is continuous. Therefore we have a bijection between functions from $X$ into a given topological space $Y$ and continuous maps between X and $Y$. This means that this functor is left adjoint to the forgetful functor $\functor{G}: \cat{Top} \to \cat{Set}$. If instead we let $\functor{F}$ assign the trivial topology to $X$, every function \emph{to} $X$ is continuous and by the opposite argument $\functor{F}$ is right adjoint to $\functor{G}$.
+    For every set $X$, there are two canonical ways of defining a topology on it, the trivial topology and the discrete topology. These are in fact functors $\functor{F}: \cat{Set} \to \cat{Top}$. Assigning the discrete topology to $X$ by $\functor{F}$ will mean that any map \emph{from} it is continuous. Therefore we have a bijection between functions from $X$ into a given topological space $Y$ and continuous maps between $X$ and $Y$. This means that this functor is left adjoint to the forgetful functor $\functor{G}: \cat{Top} \to \cat{Set}$. If instead we let $\functor{F}$ assign the trivial topology to $X$, every function \emph{to} $X$ is continuous and by the opposite argument $\functor{F}$ is right adjoint to $\functor{G}$.
     
     The \emph{Yoneda lemma} is perhaps the most important result in elementary category theory. It tells us something essential about representable functors which will be defined. In every category $\cat{C}$ and $A \in \cat{C}$ there is a covariant functor $h^A: \cat{C} \to \cat{Set}$, often denoted $\mathrm{Hom}_\cat{C}(A, -)$. It sends objects $X \mapsto \mathrm{Hom}_\cat{C}(A, X)$ and arrows $f \mapsto f \circ -$. In fact, 
     
