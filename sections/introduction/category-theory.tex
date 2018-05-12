@@ -23,13 +23,23 @@
     \end{definition}
 
     \begin{definition}
-        If $hom(x, y)$ is a set for every choice of $x$ and $y$, $\cat{C}$ is \defemph{locally small}. If also $ob(\cat{C})$ is a set, \defemph{C} is \defemph{small}. 
+        If $hom(x, y)$ is a set for every choice of $x$ and $y$, $\cat{C}$ is \defemph{locally small}. If also $ob(\cat{C})$ is a set, $\cat{C}$ is \defemph{small}.
     \end{definition}
     
     Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is invariant.
 
     \begin{example}
-        An example of a category would be the category of topological spaces, usually denoted $\cat{Top}$, with objects being topological spaces and morphisms being continuous functions. Another example of a category would be $\cat{hTop}$ with the same objects but homotopy equivalence classes as morphisms. Yet another category would be $\cat{Haus}$ where instead the objects are topological spaces with the Hausdorff property and continuous functions as morphisms.
+        The most obvious category is perhaps the category of sets called $\cat{Set}$ with $ob(\cat{Set})$ being the collection of all sets and morphisms consisting of functions between these. The categorical axioms are easily checked.
+        
+        Note that since the collection of all sets is not a set itself, $\cat{Set}$ is not a small category.
+
+        Related categories to set is $\cat{Grp}$, the category of groups, and $\cat{Ab}$, the category of abelian groups. These both have group homomorphisms as arrows. Since every group is made up of a set and every group homomorphism can be seen as a function between these, $\cat{Grp}$ and $\cat{Ab}$ is what is called a \defemph{subcategory} of $\cat{Set}$. Likewise, $\cat{Ab}$ is a subcategory of $\cat{Grp}$.
+    \end{example}
+
+    \begin{example}
+        Many concepts of topology can be considered(and often clarified) from a categorical point of view, such as \emph{homeomorphism}, \emph{products}, \emph{coproducts} and the \emph{discrete/trivial} topologies. For these purposes, one needs to construct a few important categories.
+        
+        The category of topological spaces, usually denoted $\cat{Top}$, has objects being topological spaces and morphisms being continuous functions. It is also a subcategory of $\cat{Set}$. A related example is $\cat{hTop}$ with the same objects but homotopy equivalence classes as morphisms. Yet another related category would be $\cat{Haus}$ where instead the objects are topological spaces with the Hausdorff property and continuous functions as morphisms.
     \end{example}
 
     \begin{definition}
