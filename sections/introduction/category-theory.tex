@@ -36,12 +36,19 @@
         A (\defemph{covariant}) \defemph{functor} $\functor{F}: \cat{C} \to \cat{D}$ consists of a map of objects in $\cat{C}$ to objects in $\cat{D}$ and one map of morphisms in C to morphisms in D such that the following is fulfilled for all objects $a, b, c$ and arrows $g: a \to b, f: b \to c$.
         
         \begin{enumerate}
-            \item $\domain{\functor{F}(f)} = \functor{F}(b), \codomain{\functor{F}(f)} = \functor{F}(c)$
+            \item $\domain{\functor{F}(f)} = \functor{F}(b), \codomain{\functor{F}(f)} = \functor{F}(c)$ \label{covar1}
             \item $\functor{F}(\idarrow[c]) = \idarrow[\functor{F}(c)]$
-            \item $\functor{F}(fg) = \functor{F}(f) \circ \functor{F}(g)$ \label{cov}
+            \item $\functor{F}(fg) = \functor{F}(f) \circ \functor{F}(g)$ \label{covar2}
         \end{enumerate}
         
-        If \ref{cov} is reversed to $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$, then $\functor{F}$ is \defemph{contravariant}.
+        If \ref{covar1} and \ref{covar2} are reversed to 
+        
+        \begin{enumerate}
+            \item [\ref{covar1}*.] $\domain{\functor{F}(f)} = \functor{F}(c), \codomain{\functor{F}(f)} = \functor{F}(b)$ \label{cov1}
+            \item [\ref{covar2}*.] $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$ \label{cov2}
+        \end{enumerate}
+
+        , then $\functor{F}$ is \defemph{contravariant}.
     \end{definition}
     
     The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$.
