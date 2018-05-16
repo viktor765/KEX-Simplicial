@@ -88,7 +88,14 @@
 
     It can also be said that it is a covariant functor from $\Delta^{op}$ to $\cat{Set}$. More generally replacing $\cat{Set}$ with an arbitrary category of "objects", $X$ is a \defemph{simplicial object}. Simple but effective as it can describe many complex topological structures in a finite way.
     
-    Geometric realization is a functor from $\cat{sSet}\to \cat{CGHaus}$. $\cat{sSet}$ is the simplex category with simplicial sets as objects and natural transformations as morphisms and $\cat{CGHaus}$ is the category with compactly generated Hausdorff spaces as objects and continuous functions as morphisms. This entails that a simplicial set $X$ can be used to build a topological space $\geom[X]$ simply by interpreting each n-simplex in $X$ for all n as a corresponding copy of the standard topological n-simplex $\geom[\Delta^n]$. The topological parts are then glued together specified by face and degeneracy maps, forming the whole space. The aforementioned can be formalized as a colimit taken over the simplex category of $X$, $\Delta \downarrow X$, $\geom[X]= \text{colimit}_{\Delta^n\to X}\geom[\Delta^n]$ \cite{luk-simp}. An algebraic topological definition follows.
+    Geometric realization is a functor from $\cat{sSet}\to \cat{CGHaus}$. $\cat{sSet}$ is the simplex category with simplicial sets as objects and natural transformations as morphisms and $\cat{CGHaus}$ is the category with compactly generated Hausdorff spaces as objects and continuous functions as morphisms. This entails that a simplicial set $X$ can be used to build a topological space $\geom[X]$ simply by interpreting each n-simplex in $X$ for all n as a corresponding copy of the standard topological n-simplex $\geom[\Delta^n]$. The topological parts are then glued together specified by face and degeneracy maps, forming the whole space. The aforementioned can be formalized as a colimit taken over the simplex category of $X$, $\Delta \downarrow X$, $\geom[X]= \text{colimit}_{\Delta^n\to X}\geom[\Delta^n]$ \cite{luk-simp}. The simplex category has objects as simplicial maps $\Delta^n\to X$ for some n and the morphisms are commuting triangles, see below.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=1]{commuting_tri}
+        \caption{Morphisms of the $\Delta \downarrow X$}
+        \label{commuting-tri}
+    \end{figure}
+    An algebraic topological definition follows.
 
     \begin{definition}
         For a simplicial set $X$, given the discrete topology to each $X_n$ and with the standard n-dimensional simplex in $\mathbb{R}^{n+1}$, the \defemph{geometric realization} $\geom[X]$ of $X$ is defined as
