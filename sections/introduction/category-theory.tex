@@ -128,6 +128,17 @@
         \]
     \end{figure}
 
+    A special case of comma categories are the \defemph{slice categories}. One achieves the slice category $(\functor{A} \downarrow X)$(where $\functor{A}: \cat{A} \to \cat{C}$ and $X \in \cat{C}$) by letting in the definition above $\cat{B}$ be the category $*$ of only one object and its identity morphism as well as letting $\functor{B}=X$, which is the functor that maps $*$ to $X \in \cat{C}$(the object $X$ itself can be identified with the functor $X$). This results in objects of the type $(a, f)$ where $a \in \cat{A}$ and $f \in hom_\cat{C}(\functor{A}(a), X)$ and morphisms of commutative diagrams like the one below.
+
+    \begin{figure}[H]
+        \[
+            \begin{tikzcd}
+                \functor{A}(a) \arrow{dr}{f} \arrow{rr}{\functor{A}(\phi)} && \functor{A}(a') \arrow{dl}{f'}\\
+                & X
+            \end{tikzcd}
+        \]
+    \end{figure}
+
     For any two categories $\cat{C}$, $\cat{D}$ one can define the \defemph{category of functors} from $\cat{C}$ to $\cat{D}$ $[\cat{C}, \cat{D}] = \cat{D}^\cat{C}$. It has functors $\functor{F}: \cat{C} \to \cat{D}$ as objects but the question is raised: Given functors $\functor{F}, \functor{G}: \cat{C} \to \cat{D}$, what would a morphism $\Phi: \functor{F} \to \functor{G}$ consist of? This question leads us to the following definition.
 
     \begin{definition}
