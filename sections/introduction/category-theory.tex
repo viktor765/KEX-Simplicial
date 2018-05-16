@@ -39,7 +39,7 @@
     \begin{example}
         Many concepts of topology can be considered(and often clarified) from a categorical point of view, such as \emph{homeomorphism}, \emph{products}, \emph{coproducts} and the \emph{discrete/trivial} topologies. For these purposes, one needs to construct a few important categories.
         
-        The category of topological spaces, usually denoted $\cat{Top}$, has objects being topological spaces and morphisms being continuous functions. It is also a subcategory of $\cat{Set}$. A related example is $\cat{hTop}$ with the same objects but homotopy equivalence classes as morphisms. Yet another related category would be $\cat{Haus}$ where instead the objects are topological spaces with the Hausdorff property and continuous functions as morphisms.
+        The category of topological spaces, usually denoted $\cat{Top}$, has objects being topological spaces and morphisms being continuous functions. A related example is $\cat{hTop}$ with the same objects but homotopy equivalence classes as morphisms. Yet another related category would be $\cat{Haus}$ where instead the objects are topological spaces with the Hausdorff property and continuous functions as morphisms.
     \end{example}
 
     \begin{definition}
@@ -74,7 +74,7 @@
     
     Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor $\functor{D}: \cat{I} \to \cat{C}$, where $\cat{I}$ is called an \emph{index category}. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A \defemph{commutative diagram} is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
-    If to a diagram $\functor{D}$ in $\cat{C}$, we add an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes, $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and colimits. Important examples of limits are products are products, pullbacks, equalizers and terminal objects.
+    If to a diagram $\functor{D}$ in $\cat{C}$, one adds an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes from the perspective of $e$(more specifically $|hom_{\functor{D}+e}(e, \functor{D}(i))| = 1$ for every $i \in \cat{I}$) , $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and \defemph{colimits}. An important example of limits/colimits are categorical \emph{products}/\emph{coproducts}, defined below. Other constructions in category theory that are not covered here but are also just special cases of limits/colimits are \emph{pullbacks}/\emph{pushforwards}, \emph{equalizers}/\emph{coequalizers} and \emph{terminal objects}/\emph{initial objects}.
     
     \begin{figure}[H]
         \centering
@@ -127,6 +127,40 @@
             \end{tikzcd}
         \]
     \end{figure}
+
+    For any two categories $\cat{C}$, $\cat{D}$ one can define the \defemph{category of functors} from $\cat{C}$ to $\cat{D}$ $[\cat{C}, \cat{D}] = \cat{D}^\cat{C}$. It has functors $\functor{F}: \cat{C} \to \cat{D}$ as objects but the question is raised: Given functors $\functor{F}, \functor{G}: \cat{C} \to \cat{D}$, what would a morphism $\Phi: \functor{F} \to \functor{G}$ consist of? This question leads us to the following definition.
+
+    \begin{definition}
+        A \defemph{natural transformation} $\Phi$ between two functors $\functor{F}, \functor{G}: \cat{C} \to \cat{D}$ is a family of morphisms $\Phi_X: \functor{F}(X) \to \functor{G}(X)$ in $\cat{D}$, one for each object $X$ in $\cat{C}$, such that the following diagram commutes for every choice of $A, B \in \cat{C}$ and $f \in hom_\cat{C}(A, B)$. 
+    \end{definition}
+
+    \begin{figure}[H]
+        \[
+            \begin{tikzcd}
+                \functor{F}(A) \arrow[r, "\Phi_A"] \arrow[d, "\functor{F}(f)"]
+                & \functor{G}(A) \arrow[d, "\functor{G}(f)"]\\
+                \functor{F}(B) \arrow[r, "\Phi_B"]
+                & \functor{G}(B)
+            \end{tikzcd}
+        \]
+    \end{figure}
+
+    To complete the definition of the functor category $\cat{D}^\cat{C}$ an associative composition of natural transformations is needed. This is defined as $(\Psi \circ \Phi)_X = \Psi_X \circ \Phi_X$ for natural transformations $\Phi: \functor{F} \to \functor{G}$ and $\Psi: \functor{G} \to \functor{H}$. That this is indeed a natural transformation follows from the diagram below. Associativity is easily checked.
+
+    \begin{figure}[H]
+        \[
+            \begin{tikzcd}
+                \functor{F}(A) \arrow[r, "\Phi_A"] \arrow[d, "\functor{F}(f)"]
+                & \functor{G}(A) \arrow[r, "\Psi_A"] \arrow[d, "\functor{G}(f)"]
+                & \functor{H}(A) \arrow[d, "\functor{H}(f)"]\\
+                \functor{F}(B) \arrow[r, "\Phi_B"]
+                & \functor{G}(B) \arrow[r, "\Phi_B"]
+                & \functor{H}(B)
+            \end{tikzcd}
+        \]
+    \end{figure}
+
+    A morphism $f \in hom_\cat{C}(A, B)$ is called an \defemph{isomorphism} if there exists a morphism $f^{-1} \in hom_\cat{C}(B,A)$ such that $f \circ f^{-1} = \idarrow[B]$ and $f^{-1} \circ f = \idarrow[A]$. A natural transformation $\Phi: \functor{F} \to \functor{G}$ is called a \defemph{natural isomorphism} if $\Phi_X$ is an isomorphism for each object $X$. $\functor{F}$ and $\functor{G}$ are then \defemph{naturally isomorphic functors}. This will mean that $\Phi^{-1}$ given by $(\Phi^{-1})_X = (\Phi_X)^{-1}$ is a natural isomorphism from $\functor{G}$ to $\functor{F}$.
     
     One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
     
