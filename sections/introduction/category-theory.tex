@@ -210,12 +210,34 @@
     \begin{proof}
         Consider the following diagram of a natural transformation $\Phi$ between $h^A$ and $\functor{F}$ applied to $A$ and an arbitrary object $X \in C$. 
         
-        \begin{figure}[H]
-            \centering
-            \includegraphics[scale=.35]{Yoneda_lemma_c}
-            \caption{Diagram of natural transformation}
-            \label{fig:boat1}
-        \end{figure}
+            \[ 
+            \stackinset{l}{13ex}{b}{6ex}{%
+                \scalebox{.8}
+                {% 
+                    \begin{tikzcd}[row sep=16ex, column sep = 11ex, ampersand replacement=\&]
+                        1_A
+                        \arrow[mapsto]{r}
+                        \arrow[mapsto]{d}
+                        \& f
+                        \arrow[mapsto]{d}  \\
+                        u
+                        \arrow[mapsto]{r}
+                        \& (\functor{F}f)u=\Phi_X(f)
+                    \end{tikzcd}
+                }
+            }{% 
+                \begin{tikzcd}[row sep = 23ex, column sep = 20ex, ampersand replacement=\&]
+                    \Hom \left(A,A\right)
+                    \arrow{r}{f\circ-}
+                    \arrow[swap]{d}{\Phi_A}
+                    \& \Hom(A,X)
+                    \arrow{d}{\Phi_X}  \\
+                    \functor{F}(A)
+                    \arrow[swap]{r}{\functor{F}f}
+                    \& \functor{F}(X)
+                \end{tikzcd}
+            }
+            \]
 
         Let $u$ be the action of $\Phi_A$ on $\idarrow[A]$. By looking at both ways of sending $\idarrow[A]$ to $\functor{F}(X)$ it is realized that the action of $\Phi_X$ on any $f \in \mathrm{Hom}(A, X)$ is given by 
 
