@@ -11,9 +11,24 @@
     Similarly as $\Delta$ any morphism in $\Delta C$ can be expressed uniquely as a composite of a morphism in $\Delta$ and an element in a cyclic group $C_n$ of order $n+1$ motivating the notation $\Delta C$. For the opposite category $\Delta \cat{C^{op}}$ the maps $\delta_i^*, \; \sigma_i^*,\;\tau_n$ are denoted $d_i,\; s_i, \; t_n$ respectively. And the inclusion of $t$ necessitates the following additional relations for a cyclic set.
     \begin{enumerate}
         \item $d_it _n = t_{n-1}d_{i-1},\; 1 \leq i\leq n, \; d_0t_n=d_n$
-        \item $s_i t _n = t_{n+1}s_{i-1},\; 1 \leq i\leq n \; s_0t_n=t_{n+1}^2s_n$
+        \item $s_i t _n = t_{n+1}s_{i-1},\; 1 \leq i\leq n, \; s_0t_n=t_{n+1}^2s_n$
         \item $(t_{n})^{n+1}=id$
     \end{enumerate}
+    Note that $d_0t_n=d_n$ and $s_0t_n=t_{n+1}^2s_n$ are a consequence of the other relations. 
+    \begin{figure}[H]
+        \[
+        \begin{tikzcd}[row sep = 1ex, column sep = 10em]
+            0 \arrow[dr] & 0 \\
+            1 \arrow[dr] & 1 \\
+            :  & 2 \\
+            n-1 \arrow[dr] & :\\
+            n \arrow[uuuur] & n            
+        \end{tikzcd}   
+        \]
+        \caption{Illustration of the cyclic morphism $\tau$, as can be seen this is not a simplicial map}
+    \end{figure}
+
+
     Furthermore as is shown in \cite{loday-cyclic}, the category $\Delta \cat{C}$ contains $\Delta$ as a subcategory and utilizing a forgetful functor gives the underlying simplicial set or object. Another property of the cyclic category is that it is isomorphic to its opposite category \cite{loday-cyclic}.
 
     The circle is an obvious choice of study when introducing geometric realization in general. Several models exist and it is straightforward for simplicial sets, however, cyclic sets excel. The action of the corresponding cyclic group is somewhat compatible with simplicial structure and induces an action of the topological group $S^1$. This is summarized in the following theorem from \cite{loday-cyclic}.
