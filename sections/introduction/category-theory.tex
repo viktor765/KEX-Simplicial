@@ -79,15 +79,23 @@
     \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.5\textwidth}
-            \centering
-            \includegraphics[scale=.65]{Functor_cone}
-            \caption{}
+            \[
+                \begin{tikzcd}[row sep = large]
+                    & N \arrow[d, "u",dashed] \arrow[ddr, bend left,"\psi_Y"]   \arrow[ddl, bend right,"\psi_X",swap] & \\
+                    & L \arrow[dr, "\phi_Y"]  \arrow[dl,swap, "\phi_X"] & \\
+                    F(X) \arrow[rr,swap, "F(f)"] & &  F(Y)
+                \end{tikzcd}
+            \]
         \end{subfigure}%
-        ~ 
+        ~
         \begin{subfigure}[b]{0.5\textwidth}
-            \centering
-            \includegraphics[scale=.65]{Functor_co-cone}
-            \caption{}
+            \[
+                \begin{tikzcd}[row sep = large]
+                    F(X) \arrow[ddr,swap,"\psi_X",bend right] \arrow[dr,swap,"\phi_X"] \arrow[rr, "F(f)"] & &  F(Y) \arrow[dl,"\phi_Y"] \arrow[ddl,"\psi_Y",bend left]\\
+                    & L \arrow[d,"u",dashed] \\
+                    & N
+                \end{tikzcd}
+          \]
         \end{subfigure}
         \caption{The cone/co-cone (left, right respectively) $(N,\Psi)$ factors/cofactors through the cone $(L,\phi)$ uniquely with $u$, the latter cone $(L,\phi)$ is then denoted the limit/colimit.}
     \end{figure}
