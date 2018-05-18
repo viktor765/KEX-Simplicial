@@ -54,8 +54,36 @@
 
     For $[n]$ and $[n-1]$ in $\Delta$ there are monotone maps $d^i: [n-1] \to [n]$, the monotone injection that misses $i \leq n$, and $s^i: [n] \to [n-1]$, the monotone surjection sending $i$ and $i+1$ to $i \leq n-1$. The injection is called coface and the surjection is called codegeneracy. 
 
-    %insert figure of d^i and s^i
-
+    \begin{figure}[H]
+        \begin{subfigure}[b]{0.45\textwidth}
+            \[
+                \begin{tikzcd}[row sep = 1ex, column sep = 5em]
+                    0  \arrow[r] &  0 \\
+                    1  \arrow[r] &  1 \\
+                    : & : \\
+                    i \arrow[dr] & i\\
+                    : & i+1\\
+                    n \arrow[dr] & :\\
+                    & n+1
+                \end{tikzcd}
+          \]
+        \end{subfigure}
+        ~
+        \begin{subfigure}[b]{0.45\textwidth}
+            \[
+                \begin{tikzcd}[row sep = 1ex, column sep = 5em]
+                    0  \arrow[r] &  0 \\
+                    1  \arrow[r] &  1 \\
+                    i \arrow[r] &  i\\
+                    i + 1 \arrow[ur] & :\\
+                    : & n\\
+                    n + 1 \arrow[ur] 
+                \end{tikzcd}
+          \]
+        \end{subfigure}
+        \caption{Coface map (left) and codegeneracy map (right).}
+    \end{figure}
+    
     An important property of $\Delta$ is the following property of these.
 
     \begin{proposition}\label{uni-fun}
