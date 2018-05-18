@@ -74,6 +74,7 @@
                 \begin{tikzcd}[row sep = 1ex, column sep = 5em]
                     0  \arrow[r] &  0 \\
                     1  \arrow[r] &  1 \\
+                    : & : \\
                     i \arrow[r] &  i\\
                     i + 1 \arrow[ur] & :\\
                     : & n\\
@@ -81,7 +82,7 @@
                 \end{tikzcd}
           \]
         \end{subfigure}
-        \caption{Coface map (left) and codegeneracy map (right).}
+        \caption{Coface map $d^i$ (left) and codegeneracy map $s^i$ (right).}
     \end{figure}
     
     An important property of $\Delta$ is the following property of these.
@@ -118,9 +119,13 @@
     
     Geometric realization is a functor from $\cat{sSet}\to \cat{CGHaus}$. $\cat{sSet}$ is the simplex category with simplicial sets as objects and natural transformations as morphisms and $\cat{CGHaus}$ is the category with compactly generated Hausdorff spaces as objects and continuous functions as morphisms. This entails that a simplicial set $X$ can be used to build a topological space $\geom[X]$ simply by interpreting each n-simplex in $X$ for all n as a corresponding copy of the standard topological n-simplex $\geom[\Delta^n]$. The topological parts are then glued together specified by face and degeneracy maps, forming the whole space. The aforementioned can be formalized in the following way as a colimit. The index can be created with a slice category, namely the simplex category of $X$, $\Delta^{(-)} \downarrow X$. The simplex category has objects as simplicial maps $\Delta^n\to X$ for some n and the morphisms are commuting triangles, see figure \ref{commuting-tri}. $\Delta^{(-)}$ is the Yoneda embedding of $\Delta$. Finally a diagram, in this case a canonical functor from $F:\Delta^{(-)} \downarrow X\to \cat{Top}$ sending n-simplices to the topological n-simplices. A colimit is then taken over $\geom[X]= \text{colimit}F$.\cite{luk-simp}.
     \begin{figure}[H]
-        \centering
-        \includegraphics[scale=1]{commuting_tri}
-        \caption{Morphisms of the $\Delta \downarrow X$}
+        \[
+            \begin{tikzcd}[row sep = 3em]
+                \Delta^n \arrow[rr,"\Delta(\phi)"] \arrow[dr, "f"] && \Delta^m \arrow[dl,"g", swap] \\
+                & C
+            \end{tikzcd}
+        \]
+        \caption{Morphisms of the category $\Delta \downarrow X$}
         \label{commuting-tri}
     \end{figure}
     An algebraic topological definition follows.
