@@ -149,21 +149,47 @@
     \end{proposition}
 
     \begin{proof}
-        Any given point $x \in \geom[X]$ has a unique non-degenerate representative, in some simplex $k_n$. Make a small open neighborhood of $x$ in the interior of $k_n$ and call it $N_k(x)$. Assuming $x \neq y$ we can also create a disjoint such $N_l(y)$.
+        Assume that $x, y \in \geom[X]$ and that $x = y$. The goal is to construct two disjoint open neighborhoods $N(x)$ and $N(y)$.
+
+        Any given point $x \in \geom[X]$ has a unique non-degenerate representative in $\bigGeom X$, $(k_a, u_a)$. Likewise let $(k'_b, u'_b)$ be the non-degenerate representative of $y$.
+
+        Keeping in mind that $\geom[\Delta^n]$ is a metric space, let $N_a(x)$ and $N_b(y)$ be open balls of radii $r$ small enough to be enclosed in the interior of $k_a$ and $k'_b$ while also not intersecting in case $k_a=k'_b$. The ball for $x$ can be written 
         
-        We will create open neighborhoods of $x$, $N_n(x)$ for every dimension that are closed under the equivalence relation when restricting ourselves to simplices of dimension $\leq n$. This is done by including all such $N_{n'}(x)$ of $n' < n$ and also all equivalent degenerate points in $N_n(x)$.
-        
-        Assume the construction is made up to dimension $n$. Via $\sim$ there are subsets of non-degenerate $(n+1)$-simplices $k_{n+1}$ identified with $N_n$ in $\geom[X]$. Now for any such $k_{n+1}$, we can extend $N_n(x)$ to an open subset of $k_{n+1}$ by stretching it slightly towards the barycenter. If $y \in \interior{k_{n+1}}$ then this neighborhood and $N_{n+1}(y)$ can be made small enough not to intersect each other. Also, if $N_{n}(y)$ is identified with another face of $k_{n+1}$ they will not intersect.
+        \begin{align*}
+            N_i(x) = \{k_i\} \times \\
+            \{(z_0, z_1, ..., z_i) \in \geom[\Delta^i]: \frac{(z_0-x_0)^2 + (z_1-x_1)^2 + ... + (z_a-x_a)^2}{r^2} < 1 \}.
+        \end{align*}
 
-        If $k_{n+1}$ is a degenerate simplex we will instead let the neighborhood of $x$ in it to be the preimage of the projection onto $k_n$. This is important as all these points are in the identification of $N_n(x)$.
+        This can be seen as an ellipsoid centered around $x$ with all $c_i = r$ in
 
-        Now take $N_{n+1}(x)$ to be the union of all the neighborhoods of $N_n(x)$ created in this fashion for every $k_{n+1}$ considered. It is disjoint from $N_{n+1}(y)$. Let
+        \begin{align}\label{ellipsoid}
+            N_i(x) = \{k_i\} \times \nonumber \\
+            \{(z_0, z_1, ..., z_i) \in \geom[\Delta^i]: \frac{(z_0-x_0)^2}{c_0^2} + \frac{(z_1-x_1)^2}{c_1^2} + ... + \frac{(z_b-x_b)^2}{c_b^2} < 1 \}.
+        \end{align}
 
-        \begin{equation*}
-            N(x) = \Pi_{n \geq 0} N_n(x)
-        \end{equation*}
+        As such there is an open ellipsoid in dimension $i$ containing $x$ and one in $j$ containing $y$. Assume wlog that $i \leq j$. Construct $N_{i+1}(x)$ by considering all $(i+1)$-simplices having a face identified by $\sim$ with an $i$-simplex intersected by $N_i(x)$. Extend the ellipsoid around $x$ into each $(i+1)$-simplex by inserting a $c_\alpha$ in the correct position in \eqref{ellipsoid}. Repeat until $i = b$ and make sure in the last step to not intersect $N_b(y)$ for example by choosing that $c_\alpha$
 
-        and likewise create $N(y)$. $N(x)$ and $N(y)$ are saturated open sets that are disjoint and so their projections on $\geom[X]$ will be open and disjoint.
+        \begin{align}\label{distance}
+            c_\alpha < \text{inf}\,\{\frac{|u-v|}{2}: u \in N_{b-1}(x), v \in N_b(y)\}
+        \end{align}
+
+        Now there are disjoint open neighborhoods of every representative of $x$ and $y$ for the simplices of every dimension up to $b$. The union of these for $x$ are $N_b(x)$. The intersection with any of the concerned simplices in $K_j, j \leq b$ is an ellipsoid. Also each $N_j(x) \subset N_b(x)$ for $j < b$
+
+        Now it will be shown that if this holds for all dimensions up to $i$ than these neighborhoods can be chosen in $i+1$ as well. This is done in much the same fashion as \eqref{distance}.
+
+        Take every simplex in $K_{i+1}$ with faces intersected by $N_i(x)$ and $N_i(y)$ respectively. Once again extend the ellipsoidal intersections to one higher dimension by inserting $c_\alpha$ with the restriction
+
+        \begin{align*}
+            c_\alpha < \text{inf}\,\{\frac{|u-v|}{2}: u \in N_{i}(x), v \in N_i(y)\}
+        \end{align*}
+
+        which is taken over every simplex intersecting both $N_i(x)$ and $N_i(y)$. The other restriction is that $c_\alpha$ is small enough that the ellipsoid stays in the interior of the simplices.
+
+        This makes for open ellipsoids containing every representative of $x$ in $K_{i+1}$ and also its neighborhoods $N_j$ for $j < i$. By induction this holds in any dimension $n \in \mathbb{N}$.
+
+        Now let \[N(x) = \cup_{j \in \mathbb{N}} N_j(x).\]
+
+        This is an open saturated set in in $\bigGeom X$ with regards to $\sim$ which means that its projection on $\geom[X]$ is open. The same is true for the disjoint $N(y)$ which means that their open projections separate $x$ and $y$.
     \end{proof}
     
     Especially the next proposition connects algebraic topology to the theory of simplicial sets.
