@@ -5,9 +5,9 @@
     Simplicial sets can be seen as a generalization of directed multigraphs. Calling the vertices in a multigraph 0-simplices and the edges 1-simplices, each 1-simplex $k_1$ is assigned two 0-simplices $d_0k_1$ and $d_1k_1$, the head and tail vertex of $k_1$ respectively. The maps $d_i$ are called the \emph{face maps} for 1 simplices. This raises the question what exactly an $n$-simplex should be. An $n$-simplex from geometry has $n+1$ vertices and faces, which can all be considered simplices too.
 
     \begin{example}[2-simplex]
-        A $2$-simplex is a triangle, which has three faces(sides) and three vertices, that we will assume are ordered. The order is arbitrary. Each face can be uniquely identified with the vertex opposite of it, which induces an order on the faces too. Having a set of triangles with vertices denoted by $\{0,..,2\}$ we therefore have a face map $d_i$ sending every 2-simplex to its $i$'th edge which is a $0$-simplex. This can in turn be sent to its $2$ faces which are vertices of a triangle. 
+        A $2$-simplex is a triangle, which has three faces(sides) and three vertices, that we will assume are ordered. The order is arbitrary. Each face can be uniquely identified with the vertex opposite of it, which induces an order on the faces too. Having a set of triangles with vertices denoted by $\{0,..,2\}$ we therefore have a face map $d_i$ sending every 2-simplex to its $i$'th edge which is a $1$-simplex. This can in turn be sent to its $2$ faces which are vertices ($0$-simplices) of the triangle. 
         
-        Therefore the situation could modeled as follows. There are three sets $X_2$, $X_1$ and $X_0$ of $2$-, $1$- and $0$-simplices with maps $d_i: X_n \to X_{n-1}, i \in \{0,.., n\}$ between them. The structure is realized by observing that $d_0d_1 = d_0d_0$, $d_1d_2 = d_1d_1$ and $d_0d_2 = d_1d_0$ must hold as the vertex at the head of an edge must be at the tail of the following. In other words, these relations arise from the fact that any vertex can be reached in two ways because it is part of two sides.
+        The situation can be modeled as follows. There are three sets $X_2$, $X_1$ and $X_0$ of $2$-, $1$- and $0$-simplices with maps $d_i: X_n \to X_{n-1}, i \in \{0,.., n\}$ between them. The structure is understood by observing that $d_0d_1 = d_0d_0$, $d_1d_2 = d_1d_1$ and $d_0d_2 = d_1d_0$ must hold as the vertex at the head and tail of an edge must be at the head or tail of another. In other words, these relations arise from the fact that any vertex can be reached in two ways because it is part of two sides.
 
         \begin{figure}[H]
             \begin{subfigure}[b]{0.3\textwidth}
@@ -29,7 +29,7 @@
         \end{figure}
     \end{example}
 
-    In higher dimensional $n$-simplices, the situation is similar. Any face ($n-1$-simplex) has a unique opposite vertex ($0$-simplex). Therefore there is for any $i \in \{0,..,n\}$ a mapping $d_i$ mapping every $n$-simplex to its $i$'th face.
+    In higher dimensional $n$-simplices, the situation is similar. Any face ($(n-1)$-simplex) has a unique opposite vertex ($0$-simplex). Therefore there is for any $i \in \{0,..,n\}$ a map $d_i$ sending every $n$-simplex to its $i$'th face.
 
     In a \emph{simplicial set} $X$ (to be defined) there is an $X_n$ for all $n \in \mathbb{N}$, even when we are not modeling any simplices of dimension higher than $n$ for some $n$. As long as there is at least one simplex of lower dimension these will not be empty due to the \emph{degeneracy maps} $s_i$. The following definition will make clear what they are and also describe the structure of a simplex in a simplicial set.
 
@@ -51,9 +51,8 @@
                 X_0  \arrow[r,"s_0",red] & X_1 \arrow[l, "d_0",swap, bend right] \arrow[l,"d_1", bend left]  \arrow[r,"s_0",bend left,red] \arrow[r,"s_1",swap,bend right,red] & X_2 \arrow[l,"d_0",bend right,shift right=4,swap] \arrow[l,"d_1",swap] \arrow[l,"d_2",bend left,shift left=4] & ...
             \end{tikzcd}
         \]
-        \caption{Illustration of the sets and the maps.}
+        \caption{Illustration of the sets and maps defined in \ref{simplicial-set}}
     \end{figure}
-
 
     Simplicial sets are constructed through ordered sets and order preserving maps. The elements of $X_n$ are called $n$-simplices. The $d_i$ and $s_i$ are called \defemph{face maps} and \defemph{degeneracy maps}. A simplex that can be written $s_ix_n$ for some $x_n \in X_n$ is called a \defemph{degenerate simplex}. 
     
@@ -63,7 +62,7 @@
         The category $\Delta$ consists of all finite ordinals $[n] = \{0, .., n\}$ with arrows being all monotone (order preserving) maps.
     \end{definition}
 
-    For $[n]$ and $[n-1]$ in $\Delta$ there are monotone maps $d^i: [n-1] \to [n]$, the monotone injection that misses $i \leq n$, and $s^i: [n] \to [n-1]$, the monotone surjection sending $i$ and $i+1$ to $i \leq n-1$. The injection is called coface and the surjection is called codegeneracy. 
+    For $[n]$ and $[n-1]$ in $\Delta$ there are monotone maps $d^i: [n-1] \to [n]$, the monotone injection that misses $i \leq n$, and $s^i: [n] \to [n-1]$, the monotone surjection sending $i$ and $i+1$ to $i \leq n-1$. The injections $d_i$ and surjections $s_i$ are called \defemph{coface} and \defemph{codegeneracy} maps respectively. 
 
     \begin{figure}[H]
         \begin{subfigure}[b]{0.45\textwidth}
@@ -95,6 +94,14 @@
         \end{subfigure}
         \caption{Coface map $d^i$ (left) and codegeneracy map $s^i$ (right).}
     \end{figure}
+
+    The following definition of a simplicial set, using the language of category theory, is equivalent to $\ref{simplicial-set}$.
+
+    \begin{definition}
+        A \defemph{simplicial set} $X$ is a contravariant functor from $\Delta$ to $\cat{Set}$.
+    \end{definition}
+
+    It can also be said that it is a covariant functor from $\Delta^{op}$ to $\cat{Set}$. More generally replacing $\cat{Set}$ with an arbitrary category of "objects", $X$ is a \defemph{simplicial object}. 
     
     An important property of $\Delta$ is the following property of these.
 
@@ -115,34 +122,32 @@
     This proof was based on a proof from \cite{simp-maye}.
 
     \begin{corollary}\label{uni-sim}
-        For a simplex x' in a simplicial set X there is a unique representation
+        Any simplex $x' \in X_n$ in a simplicial set $X$ has a unique representation
         \[x' = s_{j_h},...,s_{j_1}x\]
-        where x is a non-degenerate simplex in X and the subscripts j satisfy $j_1 <... < j_h$.
+        where $x$ is a non-degenerate simplex in $X_{n-h}$ and the subscripts $j$ satisfy $j_1 < ... < j_h$.
     \end{corollary}
-
-    The following definition, using the language of category theory, of a simplicial set is equivalent to $\ref{simplicial-set}$.
-
-    \begin{definition}
-        A \defemph{simplicial set} is a contravariant functor from $\Delta$ to $\cat{Set}$.
-    \end{definition}
-
-    It can also be said that it is a covariant functor from $\Delta^{op}$ to $\cat{Set}$. More generally replacing $\cat{Set}$ with an arbitrary category of "objects", $X$ is a \defemph{simplicial object}. 
     
-    Geometric realization is a functor from $\cat{sSet}\to \cat{CGHaus}$. $\cat{sSet}$ is the simplex category with simplicial sets as objects and natural transformations as morphisms and $\cat{CGHaus}$ is the category with compactly generated Hausdorff spaces as objects and continuous functions as morphisms. This entails that a simplicial set $X$ can be used to build a topological space $\geom[X]$ simply by interpreting each n-simplex in $X$ for all n as a corresponding copy of the standard topological n-simplex $\geom[\Delta^n]$. The topological parts are then glued together specified by face and degeneracy maps, forming the whole space. The aforementioned can be formalized in the following way as a colimit. The index can be created with a slice category, namely the simplex category of $X$, $\Delta^{(-)} \downarrow X$. The simplex category has objects as simplicial maps $\Delta^n\to X$ for some n and the morphisms are commuting triangles, see figure \ref{commuting-tri}. $\Delta^{(-)}$ is the Yoneda embedding of $\Delta$. Finally a diagram, in this case a canonical functor from $F:\Delta^{(-)} \downarrow X\to \cat{Top}$ sending n-simplices to the topological n-simplices. A colimit is then taken over $\geom[X]= \text{colimit}F$ \cite{luk-simp}. Simple but effective as it can describe many complex topological structures in a finite way.
+    Geometric realization is a functor from $\cat{sSet}\to \cat{CGHaus}$. $\cat{sSet}$ is the category of simplicial sets with natural transformations as morphisms and $\cat{CGHaus}$ is the category with compactly generated Hausdorff spaces as objects and continuous functions as morphisms. This entails that a simplicial set $X$ can be used to build a topological space $\geom[X]$ simply by interpreting each n-simplex in $X$ for all $n$ as a corresponding copy of the standard topological n-simplex $\geom[\Delta^n]$. The topological parts are then glued together as specified by face and degeneracy maps, forming the whole space. The aforementioned can be formalized in the following way as a colimit. The index can be created with a slice category, namely the simplex category of $X$, $\Delta^{(-)} \downarrow X$. The simplex category has objects as simplicial maps $\Delta^n\to X$ for some $n$ and the morphisms are commuting triangles, see figure \ref{commuting-tri}. $\Delta^{(-)}$ is the Yoneda embedding of $\Delta$. 
+    
     \begin{figure}[H]
         \[
             \begin{tikzcd}[row sep = 3em]
-                \Delta^n \arrow[rr,"\Delta(\phi)"] \arrow[dr, "f"] && \Delta^m \arrow[dl,"g", swap] \\
+                \Delta^n \arrow[rr,"\Delta(\phi)"] \arrow[dr, "f", swap] && \Delta^m \arrow[dl,"g"] \\
                 & C
             \end{tikzcd}
         \]
-        \caption{Morphisms of the category $\Delta \downarrow X$}
+        \caption{Morphism of the category $\Delta \downarrow X$, compare to \ref{slice-cat}}
         \label{commuting-tri}
     \end{figure}
+    
+    With $(\Delta^{(-)} \downarrow X)$ as index category one finally one forms a diagram in $\cat{Top}$, $\functor{F}:(\Delta^{(-)} \downarrow X) \to \cat{Top}$. $\functor{F}$ acts by sending $\Delta^n \to X$ to $\geom[\Delta^n]$. Taking the colimit over this diagram one achieves the geometric realization $\geom[X]$\cite{luk-simp}.
+    
+    \[\geom[X]= \mathrm{colim}\, \functor{F}\]
+
     An algebraic topological definition follows.
 
     \begin{definition}
-        For a simplicial set $X$, given the discrete topology to each $X_n$ and with the standard n-dimensional simplex in $\mathbb{R}^{n+1}$, the \defemph{geometric realization} $\geom[X]$ of $X$ is defined as
+        For a simplicial set $X$, giving the discrete topology to each $X_n$ and with the standard n-dimensional simplex in $\mathbb{R}^{n+1}$, the \defemph{geometric realization} $\geom[X]$ of $X$ is defined as
         \[\geom[X]=\left(\coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]\right)/\sim.\]
         $\geom[X]$ is equipped with the quotient topology and the equivalence relation $(\sim)$ generated by these 
         \begin{itemize}
@@ -151,7 +156,7 @@
         \end{itemize}\label{geo-rel}
     \end{definition}
     
-    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second equality relation one gets the fat geometric realization, an, for this report, esoteric concept. For reference $\bigGeom X = \coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]$. A point $(x_n,u_n)\in \bigGeom X$ is called \defemph{non-degenerate} if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A proof from \cite{simp-maye} follows.
+    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second relation one gets the \defemph{fat geometric realization}, for this report an esoteric concept. For reference $\bigGeom X = \coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]$. A point $(x_n,u_n)\in \bigGeom X$ is called \defemph{non-degenerate} if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A proof from \cite{simp-maye} follows.
 
     \begin{lemma}\label{deg-rep}
         Given the equivalence relations in definition \ref{geo-rel}, every point $\left(x_n',u_n'\right)\in\bigGeom X$ is equivalent to a unique non-degenerate point $\left(x_m,u_m\right)$.
@@ -163,14 +168,14 @@
 
     First applying $\phi$ results in an interior point of which $\lambda$ sends to a non-degenerate simplex. $\lambda$ preserving the interior point property of the second element as $s^i$ defined in definition \ref{simp-map}. $\lambda\circ\phi$ relies on the equivalence relation stated in the geometric realization and therefore uniqueness is achieved. 
 
-    The following proposition and proof is often omitted and taken for granted, however, it does provide insight and intuition into the field of simplicial sets. 
+    The following proposition and proof is often omitted and taken for granted. However, it does provide insight and intuition into the field of simplicial sets. 
 
     \begin{proposition}
         The geometric realization of a simplicial set $X$ is Hausdorff.
     \end{proposition}
 
     \begin{proof}
-        Assume that $x, y \in \geom[X]$ and that $x = y$. The goal is to construct two disjoint open neighborhoods $N(x)$ and $N(y)$.
+        Assume that $x, y \in \geom[X]$ and that $x \neq y$. The goal is to construct two disjoint open neighborhoods $N(x)$ and $N(y)$.
 
         Any given point $x \in \geom[X]$ has a unique non-degenerate representative in $\bigGeom X$, $(k_a, u_a)$. Likewise let $(k'_b, u'_b)$ be the non-degenerate representative of $y$.
 
@@ -307,7 +312,7 @@
         If $X$ and $Y$ are simplicial sets then $\geom[X\times Y]\cong \geom[X]\times \geom[Y]$ in the category $\cat{CGHaus}$.
     \end{proposition}
 
-    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to get representatives and then establishing a bijection. 
+    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to obtain unique non-degenerate representatives and then establishing a bijection. 
 
     This does not hold for simplicial complexes, a key difference. It is sufficient to require either that the simplicial sets are countable or that one of their geometric realizations $\geom[X],\; \geom[Y]$ is locally finite for the geometric realization to commute with the product. 
 
