@@ -5,12 +5,12 @@
     Category theory is the language needed to give simplicial/cyclic sets a simple definition. It is also an essential part of the language of algebraic topology. It begins with the elementary definitions of categories, functors, natural transformations and adjunctions.
 
     \begin{definition}
-        A \defemph{category} is a collection of objects $ob(\cat{C})$ such that for every pair of objects $x, y \in ob(\cat{C})$ there is a collection $hom(x, y)$ of \defemph{arrows} or \defemph{morphisms} from $x$ to $y$. These are said to have $x$ as their \defemph{domain} and $y$ as \defemph{codomain}. If $f \in hom(A, B)$ it is often written $f: x \to y$ and $\domain{f} = x, \codomain{f} = y$.
+        A \defemph{category} is a collection of objects $ob(\cat{C})$ such that for every pair of objects $x, y \in ob(\cat{C})$ there is a collection $\Hom(x, y)$ of \defemph{arrows} or \defemph{morphisms} from $x$ to $y$. These are said to have $x$ as their \defemph{domain} and $y$ as \defemph{codomain}. If $f \in \Hom(A, B)$ it is often written $f: x \to y$ and $\domain{f} = x, \codomain{f} = y$.
         
         For all $x, y, z \in ob(\cat{C})$ there is a composition of arrows 
         
         \begin{align*}
-            \circ: hom(x, y) \times hom(y, z) &\to hom(x, z) \\ 
+            \circ: \Hom(x, y) \times \Hom(y, z) &\to \Hom(x, z) \\ 
             f, g &\mapsto g \circ f = gf
         \end{align*}
         
@@ -23,7 +23,7 @@
     \end{definition}
 
     \begin{definition}
-        If $hom(x, y)$ is a set for every choice of $x$ and $y$, $\cat{C}$ is \defemph{locally small}. If also $ob(\cat{C})$ is a set, $\cat{C}$ is \defemph{small}.
+        If $\Hom(x, y)$ is a set for every choice of $x$ and $y$, $\cat{C}$ is \defemph{locally small}. If also $ob(\cat{C})$ is a set, $\cat{C}$ is \defemph{small}.
     \end{definition}
     
     Every category $\cat{C}$ has an associated category $\cat{C^{op}}$ formed by reversing all arrows in $\cat{C}$. Every statement in $\cat{C}$ can be made in $\cat{C^{op}}$ and is then called the \defemph{dual} statement. Its truth value is invariant.
@@ -72,9 +72,9 @@
 
     These examples are illustrative and are but a small fraction of functors. The forgetful functor is a general notion, simply leaving out or "forgetting" structure can be done in many cases. The last example stated above might seem roundabout and will be properly treated next. 
     
-    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor $\functor{D}: \cat{I} \to \cat{C}$, where $\cat{I}$ is called an \emph{index category}. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A \defemph{commutative diagram} is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
+    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor $\functor{D}: \cat{I} \to \cat{C}$, where $\cat{I}$ is called an \emph{index category}. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A \defemph{commutative diagram} is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|\Hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
-    If to a diagram $\functor{D}$ in $\cat{C}$, one adds an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes from the perspective of $e$(more specifically $|hom_{\functor{D}+e}(e, \functor{D}(i))| = 1$ for every $i \in \cat{I}$) , $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and \defemph{colimits}. An important example of limits/colimits are categorical \emph{products}/\emph{coproducts}, defined below. Other constructions in category theory that are not covered here but are also just special cases of limits/colimits are \emph{pullbacks}/\emph{pushforwards}, \emph{equalizers}/\emph{coequalizers} and \emph{terminal objects}/\emph{initial objects}.
+    If to a diagram $\functor{D}$ in $\cat{C}$, one adds an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes from the perspective of $e$(more specifically $|\Hom_{\functor{D}+e}(e, \functor{D}(i))| = 1$ for every $i \in \cat{I}$) , $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and \defemph{colimits}. An important example of limits/colimits are categorical \emph{products}/\emph{coproducts}, defined below. Other constructions in category theory that are not covered here but are also just special cases of limits/colimits are \emph{pullbacks}/\emph{pushforwards}, \emph{equalizers}/\emph{coequalizers} and \emph{terminal objects}/\emph{initial objects}.
     
     \begin{figure}[H]
         \centering
@@ -126,7 +126,7 @@
     For two functors $\functor{A}, \functor{B}$ with the same target one can define the \defemph{comma category} $(\functor{A} \downarrow \functor{B})$, which is read "$\functor{A}$ comma $\functor{B}$". This concept is needed to give a categorical description of the \textit{geometric realization} of simplicial sets.
 
     \begin{definition}
-        Given functors $\functor{A}: A \to C$, $\functor{B}: B \to C$, the category $(\functor{A} \downarrow \functor{B})$ has its objects made up up triplets $(a, b, f)$ where $a \in A$, $b \in B$ and $f \in hom(\functor{A}(a), \functor{B}(b))$ and arrows between $(a, b, f)$ and $(a', b', f')$ made up of commutative diagrams of the following type.
+        Given functors $\functor{A}: A \to C$, $\functor{B}: B \to C$, the category $(\functor{A} \downarrow \functor{B})$ has its objects made up up triplets $(a, b, f)$ where $a \in A$, $b \in B$ and $f \in \Hom(\functor{A}(a), \functor{B}(b))$ and arrows between $(a, b, f)$ and $(a', b', f')$ made up of commutative diagrams of the following type.
     \end{definition}
 
     \begin{figure}[H]
@@ -140,7 +140,7 @@
         \]
     \end{figure}
 
-    A special case of comma categories are the \defemph{slice categories}. One achieves the slice category $(\functor{A} \downarrow X)$(where $\functor{A}: \cat{A} \to \cat{C}$ and $X \in \cat{C}$) by letting in the definition above $\cat{B}$ be the category $*$ of only one object and its identity morphism as well as letting $\functor{B}=X$, which is the functor that maps $*$ to $X \in \cat{C}$(the object $X$ itself can be identified with the functor $X$). This results in objects of the type $(a, f)$ where $a \in \cat{A}$ and $f \in hom_\cat{C}(\functor{A}(a), X)$ and morphisms of commutative diagrams like the one below.
+    A special case of comma categories are the \defemph{slice categories}. One achieves the slice category $(\functor{A} \downarrow X)$(where $\functor{A}: \cat{A} \to \cat{C}$ and $X \in \cat{C}$) by letting in the definition above $\cat{B}$ be the category $*$ of only one object and its identity morphism as well as letting $\functor{B}=X$, which is the functor that maps $*$ to $X \in \cat{C}$(the object $X$ itself can be identified with the functor $X$). This results in objects of the type $(a, f)$ where $a \in \cat{A}$ and $f \in \Hom_\cat{C}(\functor{A}(a), X)$ and morphisms of commutative diagrams like the one below.
 
     \begin{figure}[H]
         \[
@@ -154,7 +154,7 @@
     For any two categories $\cat{C}$, $\cat{D}$ one can define the \defemph{category of functors} from $\cat{C}$ to $\cat{D}$ $[\cat{C}, \cat{D}] = \cat{D}^\cat{C}$. It has functors $\functor{F}: \cat{C} \to \cat{D}$ as objects but the question is raised: Given functors $\functor{F}, \functor{G}: \cat{C} \to \cat{D}$, what would a morphism $\Phi: \functor{F} \to \functor{G}$ consist of? This question leads us to the following definition.
 
     \begin{definition}
-        A \defemph{natural transformation} $\Phi$ between two functors $\functor{F}, \functor{G}: \cat{C} \to \cat{D}$ is a family of morphisms $\Phi_X: \functor{F}(X) \to \functor{G}(X)$ in $\cat{D}$, one for each object $X$ in $\cat{C}$, such that the following diagram commutes for every choice of $A, B \in \cat{C}$ and $f \in hom_\cat{C}(A, B)$. 
+        A \defemph{natural transformation} $\Phi$ between two functors $\functor{F}, \functor{G}: \cat{C} \to \cat{D}$ is a family of morphisms $\Phi_X: \functor{F}(X) \to \functor{G}(X)$ in $\cat{D}$, one for each object $X$ in $\cat{C}$, such that the following diagram commutes for every choice of $A, B \in \cat{C}$ and $f \in \Hom_\cat{C}(A, B)$. 
     \end{definition}
 
     \begin{figure}[H]
@@ -183,12 +183,12 @@
         \]
     \end{figure}
 
-    A morphism $f \in hom_\cat{C}(A, B)$ is called an \defemph{isomorphism} if there exists a morphism $f^{-1} \in hom_\cat{C}(B,A)$ such that $f \circ f^{-1} = \idarrow[B]$ and $f^{-1} \circ f = \idarrow[A]$. A natural transformation $\Phi: \functor{F} \to \functor{G}$ is called a \defemph{natural isomorphism} if $\Phi_X$ is an isomorphism for each object $X$. $\functor{F}$ and $\functor{G}$ are then \defemph{naturally isomorphic functors}. This will mean that $\Phi^{-1}$ given by $(\Phi^{-1})_X = (\Phi_X)^{-1}$ is a natural isomorphism from $\functor{G}$ to $\functor{F}$.
+    A morphism $f \in \Hom_\cat{C}(A, B)$ is called an \defemph{isomorphism} if there exists a morphism $f^{-1} \in \Hom_\cat{C}(B,A)$ such that $f \circ f^{-1} = \idarrow[B]$ and $f^{-1} \circ f = \idarrow[A]$. A natural transformation $\Phi: \functor{F} \to \functor{G}$ is called a \defemph{natural isomorphism} if $\Phi_X$ is an isomorphism for each object $X$. $\functor{F}$ and $\functor{G}$ are then \defemph{naturally isomorphic functors}. This will mean that $\Phi^{-1}$ given by $(\Phi^{-1})_X = (\Phi_X)^{-1}$ is a natural isomorphism from $\functor{G}$ to $\functor{F}$.
     
     One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
     
     \begin{definition}
-        Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of hom-sets, \[\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X)\], which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
+        Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of \Hom-sets, \[\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X)\], which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
     \end{definition}
     
     An example of adjunctions are letting $\functor{G}$ be the forgetful functor mapping $\cat{Grp} \to \cat{Set}$. Its left adjoint is then $\functor{F}: \cat{Set} \to \cat{Grp}$ which sends a set $A$ to the free group on $A$. The bijections arise from the fact that a group homomorphism is completely described by its action on the generators.
@@ -197,7 +197,7 @@
     
     For every set $X$, there are two canonical ways of defining a topology on it, the trivial topology and the discrete topology. These are in fact functors $\functor{F}: \cat{Set} \to \cat{Top}$. Assigning the discrete topology to $X$ by $\functor{F}$ will mean that any map \emph{from} it is continuous. Therefore we have a bijection between functions from $X$ into a given topological space $Y$ and continuous maps between $X$ and $Y$. This means that this functor is left adjoint to the forgetful functor $\functor{G}: \cat{Top} \to \cat{Set}$. If instead we let $\functor{F}$ assign the trivial topology to $X$, every function \emph{to} $X$ is continuous and by the opposite argument $\functor{F}$ is right adjoint to $\functor{G}$.
     
-    The \emph{Yoneda lemma} is perhaps the most important result in elementary category theory. It tells us something essential about representable functors which will be defined. In every category $\cat{C}$ and $A \in \cat{C}$ there is a covariant functor $h^A: \cat{C} \to \cat{Set}$, often denoted $\mathrm{Hom}_\cat{C}(A, -)$. It sends objects $X \mapsto \mathrm{Hom}_\cat{C}(A, X)$ and arrows $f \mapsto f \circ -$. In fact, 
+    The \emph{Yoneda lemma} is perhaps the most important result in elementary category theory. It tells us something essential about representable functors which will be defined. In every category $\cat{C}$ and $A \in \cat{C}$ there is a covariant functor $h^A: \cat{C} \to \cat{Set}$, often denoted $\Hom_\cat{C}(A, -)$. It sends objects $X \mapsto \Hom_\cat{C}(A, X)$ and arrows $f \mapsto f \circ -$. In fact, 
     
     \begin{equation*}
         h^-: 
@@ -250,7 +250,7 @@
             }
             \]
 
-        Let $u$ be the action of $\Phi_A$ on $\idarrow[A]$. By looking at both ways of sending $\idarrow[A]$ to $\functor{F}(X)$ it is realized that the action of $\Phi_X$ on any $f \in \mathrm{Hom}(A, X)$ is given by 
+        Let $u$ be the action of $\Phi_A$ on $\idarrow[A]$. By looking at both ways of sending $\idarrow[A]$ to $\functor{F}(X)$ it is realized that the action of $\Phi_X$ on any $f \in \Hom(A, X)$ is given by 
 
         \begin{equation}
             \Phi_X(f) = \functor{F}f(u)
