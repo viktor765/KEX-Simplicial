@@ -29,9 +29,9 @@
         \end{figure}
     \end{example}
 
-    In higher dimensional $n$-simplices, the situation is similar. Any face($n-1$-simplex) has a unique opposite vertex($0$-simplex). Therefore there is for any $i \in \{0,..,n\}$ a mapping $d_i$ mapping every $n$-simplex to its $i$'th face.
+    In higher dimensional $n$-simplices, the situation is similar. Any face ($n-1$-simplex) has a unique opposite vertex ($0$-simplex). Therefore there is for any $i \in \{0,..,n\}$ a mapping $d_i$ mapping every $n$-simplex to its $i$'th face.
 
-    In a \emph{simplicial set} $X$(to be defined) there is an $X_n$ for all $n \in \mathbb{N}$, even when we are not modeling any simplices of dimension higher than $n$ for some $n$. As long as there is at least one simplex of lower dimension these will not be empty due to the \emph{degeneracy maps} $s_i$. The following definition will make clear what they are and also describe the structure of a simplex in a simplicial set.
+    In a \emph{simplicial set} $X$ (to be defined) there is an $X_n$ for all $n \in \mathbb{N}$, even when we are not modeling any simplices of dimension higher than $n$ for some $n$. As long as there is at least one simplex of lower dimension these will not be empty due to the \emph{degeneracy maps} $s_i$. The following definition will make clear what they are and also describe the structure of a simplex in a simplicial set.
 
     \begin{definition}\label{simplicial-set}
         A \defemph{simplicial set} $X$ is a collection of sets $\{X_n\}$ indexed over $\mathbb{N}$ together with maps $d_i: X_n \to X_{n-1}$ and $s_i: X_n\to X_{n+1}$ where $0 \leq i \leq n$, subject to the following axioms called the \emph{simplicial identities}.
@@ -49,7 +49,7 @@
     This definition of a simplicial set is quite cumbersome. Luckily, there is a much more elegant definition in the language of category theory that also reveals a lot of the structure of simplicial sets. We will first have to introduce the category $\Delta$.
 
     \begin{definition}[The simplex category $\Delta$]
-        The category $\Delta$ consists of all finite ordinals $[n] = \{0, .., n\}$ with arrows being all monotone(order preserving) maps.
+        The category $\Delta$ consists of all finite ordinals $[n] = \{0, .., n\}$ with arrows being all monotone (order preserving) maps.
     \end{definition}
 
     For $[n]$ and $[n-1]$ in $\Delta$ there are monotone maps $d^i: [n-1] \to [n]$, the monotone injection that misses $i \leq n$, and $s^i: [n] \to [n-1]$, the monotone surjection sending $i$ and $i+1$ to $i \leq n-1$. The injection is called coface and the surjection is called codegeneracy. 
@@ -260,7 +260,7 @@
                 \draw[->-] (3) -- (2);
             \end{tikzpicture}
         \end{subfigure}
-        \caption{A torus(left) and a Klein bottle(right)}
+        \caption{A torus (left) and a Klein bottle (right)}
         \label{fig:squares}
         \end{figure}
         The simplicial sets are, in both cases, 
