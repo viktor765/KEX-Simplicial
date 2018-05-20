@@ -5,7 +5,7 @@
     Category theory is the language needed to give simplicial/cyclic sets a simple definition. It is also an essential part of the language of algebraic topology. It begins with the elementary definitions of categories, functors, natural transformations and adjunctions.
 
     \begin{definition}
-        A \defemph{category} is a collection of objects $ob(\cat{C})$ such that for every pair of objects $x, y \in ob(\cat{C})$ there is a collection $\Hom(x, y)$ of \defemph{arrows} or \defemph{morphisms} from $x$ to $y$. These are said to have $x$ as their \defemph{domain} and $y$ as \defemph{codomain}. If $f \in \Hom(A, B)$ it is often written $f: x \to y$ and $\domain{f} = x, \codomain{f} = y$.
+        A \defemph{category} is a collection of objects $ob(\cat{C})$ such that for every pair of objects $x, y \in ob(\cat{C})$ there is a collection $\Hom(x, y)$ of \defemph{arrows} or \defemph{morphisms} from $x$ to $y$. These are said to have $x$ as their \defemph{domain} and $y$ as \defemph{codomain}. If $f \in \Hom(x, y)$ it is often written $f: x \to y$ and $\domain{f} = x, \codomain{f} = y$.
         
         For all $x, y, z \in ob(\cat{C})$ there is a composition of arrows 
         
@@ -31,9 +31,9 @@
     \begin{example}
         The most obvious category is perhaps the category of sets called $\cat{Set}$ with $ob(\cat{Set})$ being the collection of all sets and morphisms consisting of functions between these. The categorical axioms are easily checked.
         
-        Note that since the collection of all sets is not a set itself, $\cat{Set}$ is not a small category.
+        Note that since the collection of all sets is not a set itself meaning that $\cat{Set}$ is not a small category.
 
-        Related categories to set is $\cat{Grp}$, the category of groups, and $\cat{Ab}$, the category of abelian groups. These both have group homomorphisms as arrows. Since every group is made up of a set and every group homomorphism can be seen as a function between these, $\cat{Grp}$ and $\cat{Ab}$ is what is called a \defemph{subcategory} of $\cat{Set}$. Likewise, $\cat{Ab}$ is a subcategory of $\cat{Grp}$.
+        Related categories to set is $\cat{Grp}$, the category of groups, and $\cat{Ab}$, the category of abelian groups. These both have group homomorphisms as arrows. Since every group is made up of a set and every group homomorphism can be seen as a function between these, $\cat{Grp}$ and $\cat{Ab}$ are called \defemph{subcategories} of $\cat{Set}$. Likewise, $\cat{Ab}$ is a subcategory of $\cat{Grp}$.
     \end{example}
 
     \begin{example}
@@ -72,9 +72,9 @@
 
     These examples are illustrative and are but a small fraction of functors. The forgetful functor is a general notion, simply leaving out or "forgetting" structure can be done in many cases. The last example stated above might seem roundabout and will be properly treated next. 
     
-    Inside a given category $\cat{C}$, we often study some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor $\functor{D}: \cat{I} \to \cat{C}$, where $\cat{I}$ is called an \emph{index category}. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them commuting. A \defemph{commutative diagram} is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|\Hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
+    Inside a given category $\cat{C}$, study is limited to some small, often finite, part of it. This is called a \defemph{diagram} in $\cat{C}$. Formally, an $\cat{I}$-shaped diagram $\functor{D}$ in $\cat{C}$ is a functor $\functor{D}: \cat{I} \to \cat{C}$, where $\cat{I}$ is called an \emph{index category}. If $\cat{I}$ is small, $\functor{D}$ is called a small diagram. Diagrams are a central concept in relation with them \defemph{commuting}. A \defemph{commutative diagram} is defined such that all directed paths with identical start and end points lead to the same results by composition. More exactly $|\Hom_I(A,B)|\leq 1$, there is at most one morphism between any objects $A,\,B$. Commutative diagrams play the role in category theory that equations play in algebra (see Barr–Wells, Section 1.7).%check quote 
     
-    If to a diagram $\functor{D}$ in $\cat{C}$, one adds an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes from the perspective of $e$(more specifically $|\Hom_{\functor{D}+e}(e, \functor{D}(i))| = 1$ for every $i \in \cat{I}$) , $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, in the sense that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and \defemph{colimits}. An important example of limits/colimits are categorical \emph{products}/\emph{coproducts}, defined below. Other constructions in category theory that are not covered here but are also just special cases of limits/colimits are \emph{pullbacks}/\emph{pushforwards}, \emph{equalizers}/\emph{coequalizers} and \emph{terminal objects}/\emph{initial objects}.
+    If to a diagram $\functor{D}$ in $\cat{C}$, one adds an object $e$ and arrows from $e$ to each object in $\functor{D}$ such that the resulting new diagram commutes from the perspective of $e$(more specifically $|\Hom_{\functor{D}+e}(e, \functor{D}(i))| = 1$ for every $i \in \cat{I}$) , $e$ and the arrows form a \defemph{cone} over $\functor{D}$. A cone that is universal, i.e. that every other cone factors through it uniquely, is called a \defemph{limit} over $\functor{D}$. When a limit exist, it might not be unique. However, any other limit will be isomorphic to it. The dual notions are \defemph{cocones} and \defemph{colimits}. An important example of limits/colimits are categorical \emph{products}/\emph{coproducts}, defined below. Other constructions in category theory that are not covered here but are also just special cases of limits/colimits are \emph{pullbacks}/\emph{pushforwards}, \emph{equalizers}/\emph{coequalizers} and \emph{terminal objects}/\emph{initial objects}.
     
     \begin{figure}[H]
         \centering
@@ -97,7 +97,7 @@
                 \end{tikzcd}
           \]
         \end{subfigure}
-        \caption{The cone/co-cone (left, right respectively) $(N,\Psi)$ factors/cofactors through the cone $(L,\phi)$ uniquely with $u$, the latter cone $(L,\phi)$ is then denoted the limit/colimit.}
+        \caption{The cone/co-cone (left, right respectively) $(N,\psi)$ factors/cofactors through the cone $(L,\phi)$ uniquely with $u$, the latter cone $(L,\phi)$ is then denoted the limit/colimit.}
     \end{figure}
     
     The categorical \defemph{product} can be easily defined in terms of limits. 
@@ -113,13 +113,13 @@
                 Y \arrow[ru,"f",dashed] \arrow[r,"f_i",swap] & X_i  
               \end{tikzcd}
         \]
-        \caption{Diagram of a product.\textit{For an index set I which factors X into objects $X_i,\; i \in I$ with morphisms $\pi:X\to X_i$ this constitutes a product iff for every object Y and morphisms $f_i:Y\to X_i$ there exists a unique morphism $f:Y\to X$ such that the above diagram commutes}}
+        \caption{Diagram of a product.\textit{X can be factored into $X_i,\; i \in I$ with morphisms $\pi:X\to X_i$ constituting a product iff for every object Y and morphisms $f_i:Y\to X_i$ there exists a unique morphism $f:Y\to X$ such that the above diagram commutes}}
         \label{fig:product}
     \end{figure}
     
-    Examples of products is the cartesian product in $\cat{Set}$, the topological product in $\cat{Top}$ and the direct product in $\cat{Grp}$. In these categories, any set of objects has a product with these explicit constructions. The main reason of having the topological product defined the way it is(finitely many $O_i \neq X_i$) is to make it the categorical product in $\cat{Top}$. Would we not have this requirement(also known as the \emph{box topology} on $X$) it would merely be a cone over the discrete diagram of all $c_i$.
+    Examples of products is the cartesian product in $\cat{Set}$, the topological product in $\cat{Top}$ and the direct product in $\cat{Grp}$. In these categories, any set of objects has a product with these explicit constructions. The main reason of having the topological product defined the way it is in \ref{top-prod} (finitely many $U_i \neq X_i$) is to make it the categorical product in $\cat{Top}$. Would we not have this requirement (also known as the \emph{box topology} on $X$) it would merely be a \defemph{cone} over the discrete diagram of all $c_i$.
     
-    As usual, there is a dual concept to products called a coproduct. Reverse all arrows in the definition of a product and one has a coproduct
+    As usual, there is a dual concept to products called a \defemph{coproduct}. Reverse all arrows in the definition of a product and one has a coproduct of $\{X_i\}_{i\in I}$.
 
     Examples of coproducts is the disjoint union in $\cat{Set}$ as well as its sibling, the disjoint union of topological spaces in $\cat{Top}$. This means that the cartesian product of topological spaces and the disjoint union of topological spaces are dual constructions. The same goes in $\cat{Set}$.
 
@@ -177,7 +177,7 @@
                 & \functor{G}(A) \arrow[r, "\Psi_A"] \arrow[d, "\functor{G}(f)"]
                 & \functor{H}(A) \arrow[d, "\functor{H}(f)"]\\
                 \functor{F}(B) \arrow[r, "\Phi_B"]
-                & \functor{G}(B) \arrow[r, "\Phi_B"]
+                & \functor{G}(B) \arrow[r, "\Psi_B"]
                 & \functor{H}(B)
             \end{tikzcd}
         \]
@@ -185,19 +185,19 @@
 
     A morphism $f \in \Hom_\cat{C}(A, B)$ is called an \defemph{isomorphism} if there exists a morphism $f^{-1} \in \Hom_\cat{C}(B,A)$ such that $f \circ f^{-1} = \idarrow[B]$ and $f^{-1} \circ f = \idarrow[A]$. A natural transformation $\Phi: \functor{F} \to \functor{G}$ is called a \defemph{natural isomorphism} if $\Phi_X$ is an isomorphism for each object $X$. $\functor{F}$ and $\functor{G}$ are then \defemph{naturally isomorphic functors}. This will mean that $\Phi^{-1}$ given by $(\Phi^{-1})_X = (\Phi_X)^{-1}$ is a natural isomorphism from $\functor{G}$ to $\functor{F}$.
     
-    One of the most important concepts in category theory is adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
+    One of the most important concepts in category theory are adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
     
     \begin{definition}
-        Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of \Hom-sets, \[\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X)\], which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
+        Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of \Hom-sets, \[\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X),\] which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
     \end{definition}
     
     An example of adjunctions are letting $\functor{G}$ be the forgetful functor mapping $\cat{Grp} \to \cat{Set}$. Its left adjoint is then $\functor{F}: \cat{Set} \to \cat{Grp}$ which sends a set $A$ to the free group on $A$. The bijections arise from the fact that a group homomorphism is completely described by its action on the generators.
     
-    Another example is the abelianization functor $\functor{F}: \cat{Grp} \to \cat{Ab}$. It is left adjoint to the forgetful functor $\functor{G}: \cat{Ab} \to \cat{Grp}$. This is due to the fact that the commutator subgroup $[G, G]$ of any group $G$ needs to lie in the kernel of any homomorphism into an abelian group. This means that any such homomorphism will factor uniquely through the projection $G$ onto $G^{ab}$.
+    Another example is the abelianization functor $\functor{F}: \cat{Grp} \to \cat{Ab}$. It is left adjoint to the forgetful functor $\functor{G}: \cat{Ab} \to \cat{Grp}$. This is due to the fact that the commutator subgroup $[G, G]$ of any group $G$ needs to lie in the kernel of any homomorphism into an abelian group. This means that any such homomorphism will factor uniquely through the projection of $G$ onto $G^{ab}$.
     
     For every set $X$, there are two canonical ways of defining a topology on it, the trivial topology and the discrete topology. These are in fact functors $\functor{F}: \cat{Set} \to \cat{Top}$. Assigning the discrete topology to $X$ by $\functor{F}$ will mean that any map \emph{from} it is continuous. Therefore we have a bijection between functions from $X$ into a given topological space $Y$ and continuous maps between $X$ and $Y$. This means that this functor is left adjoint to the forgetful functor $\functor{G}: \cat{Top} \to \cat{Set}$. If instead we let $\functor{F}$ assign the trivial topology to $X$, every function \emph{to} $X$ is continuous and by the opposite argument $\functor{F}$ is right adjoint to $\functor{G}$.
     
-    The \emph{Yoneda lemma} is perhaps the most important result in elementary category theory. It tells us something essential about representable functors which will be defined. In every category $\cat{C}$ and $A \in \cat{C}$ there is a covariant functor $h^A: \cat{C} \to \cat{Set}$, often denoted $\Hom_\cat{C}(A, -)$. It sends objects $X \mapsto \Hom_\cat{C}(A, X)$ and arrows $f \mapsto f \circ -$. In fact, 
+    The \emph{Yoneda lemma} is perhaps the most important result in elementary category theory. It tells us something essential about representable functors which will be defined. In every small category $\cat{C}$ and $A \in \cat{C}$ there is a covariant functor $h^A: \cat{C} \to \cat{Set}$, often denoted $\Hom_\cat{C}(A, -)$. It sends objects $X \mapsto \Hom_\cat{C}(A, X)$ and arrows $f \mapsto f \circ -$. In fact, 
     
     \begin{equation*}
         h^-: 
