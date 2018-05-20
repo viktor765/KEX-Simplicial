@@ -96,7 +96,7 @@
         \caption{Coface map $d^i$ (left) and codegeneracy map $s^i$ (right).}
     \end{figure}
 
-    The following definition of a simplicial set, using the language of category theory, is equivalent to $\ref{simplicial-set}$.
+    The following definition of a simplicial set, using the language of category theory, is equivalent to definition $\ref{simplicial-set}$.
 
     \begin{definition}
         A \defemph{simplicial set} $X$ is a contravariant functor from $\Delta$ to $\cat{Set}$.
@@ -157,7 +157,7 @@
         \end{itemize}\label{geo-rel}
     \end{definition}
     
-    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second relation one gets the \defemph{fat geometric realization}, for this report an esoteric concept. For reference $\bigGeom X = \coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]$. A point $(x_n,u_n)\in \bigGeom X$ is called \defemph{non-degenerate} if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A proof from \cite{simp-maye} follows.
+    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second relation one gets the \defemph{fat geometric realization},for this report an esoteric concept. For reference $\bigGeom X = \coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]$. A point $(x_n,u_n)\in \bigGeom X$ is called \defemph{non-degenerate} if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A proof from \cite{simp-maye} of the following lemma which essential in the derivation of the properties of the geometric realization.
 
     \begin{lemma}\label{deg-rep}
         Given the equivalence relations in definition \ref{geo-rel}, every point $\left(x_n',u_n'\right)\in\bigGeom X$ is equivalent to a unique non-degenerate point $\left(x_m,u_m\right)$.
@@ -225,7 +225,7 @@
         If $X$ is simplicial set then $\geom[X]$ is a CW-complex with one n-cell for each non-degenerate n-simplex of $X$ 
     \end{proposition}
 
-    For simplicial sets the realization as an topological object is complicated by the degenerate simplices. This is bypassed by finding an equivalent non-degenerate point of each point and done by the help of lemma \ref{deg-rep}.
+    For simplicial sets the realization as an topological object is complicated by the degenerate simplices. This is bypassed by finding an equivalent non-degenerate point of each point and done by the help of lemma \ref{deg-rep}. The proof follows directly.
 
     As often is the case some examples might shed light into how surprisingly simply the theory captures complex topological spaces.
 
