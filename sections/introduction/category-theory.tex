@@ -56,10 +56,10 @@
     
     \begin{enumerate}
         \item [\ref{covar1}*.] $\domain{\functor{F}(f)} = \functor{F}(c), \codomain{\functor{F}(f)} = \functor{F}(b)$ \label{cov1}
-        \item [\ref{covar2}*.] $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$ \label{cov2}
+        \item [\ref{covar2}*.] $\functor{F}(fg) = \functor{F}(g) \circ \functor{F}(f)$, \label{cov2}
     \end{enumerate}
 
-    , $\functor{F}$ is instead \defemph{contravariant}. The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$.
+    $\functor{F}$ is instead \defemph{contravariant}. The contravariance/covariance in conjunction with the duality of categories can be somewhat disorienting. One can interchange a contravariant functor from a category, $\cat{C}$, to a covariant from the opposite, $\cat{C^{op}}$.
 
     \begin{example}\label{functor_exmp}
         A few examples of functors include:
@@ -132,7 +132,7 @@
     \begin{figure}[H]
         \[
             \begin{tikzcd}
-                \functor{A}(a) \arrow[r, "f"] \arrow[d, "\functor{A}(\phi)"]
+                \functor{A}(a) \arrow[r, "f"] \arrow[d, "\functor{A}(\phi)",swap]
                 & \functor{B}(b) \arrow[d, "\functor{B}(\psi)"] \\
                 \functor{A}(a') \arrow[r, "f'"]
                 & \functor{B}(b')
@@ -145,7 +145,7 @@
     \begin{figure}[H]
         \[
             \begin{tikzcd}
-                \functor{A}(a) \arrow{dr}{f} \arrow{rr}{\functor{A}(\phi)} && \functor{A}(a') \arrow{dl}{f'}\\
+                \functor{A}(a) \arrow[swap]{dr}{f} \arrow{rr}{\functor{A}(\phi)} && \functor{A}(a') \arrow{dl}{f'}\\
                 & X
             \end{tikzcd}
         \]
