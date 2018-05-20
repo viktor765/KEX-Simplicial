@@ -21,9 +21,10 @@
                     \node[circle, draw=black, fill=black,inner sep=0pt, minimum size=5pt, name=2] at (2,0) {};
                     \node[xshift=2mm] at (2.east) {1};         
                     
-                    \draw [->] (0) -- (2) node [midway, above, sloped] (TextNode) {$d_1 x_2$};
+                    \draw [->] (0) -- (2) node [midway, below, sloped] (TextNode) {$d_1 x_2$};
                     \draw [->] (0) -- (1) node [midway, above, sloped] (TextNode) {$d_2 x_2$};
                     \draw [->] (2) -- (1) node [midway, above, sloped] (TextNode) {$d_0 x_2$};
+                    \node[] at (1, 0.65) {$x_2$};
                 \end{tikzpicture}
             \end{subfigure}
         \end{figure}
