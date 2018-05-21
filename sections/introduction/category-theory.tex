@@ -189,7 +189,7 @@
     
     One of the most important concepts in category theory are adjunctions. According to Saunders MacLane: \textit{“Adjoint functors arise everywhere.”}\cite{cate-mac}.
     
-    \begin{definition}
+    \begin{definition}\label{def-adjoint}
         Given $\functor{F}: \cat{D} \to \cat{C}$ and $\functor{G}: \cat{C} \to \cat{D}$, $\functor{F}$ is called \defemph{left adjoint} to $\functor{G}$ if for every $X \in C, Y \in D$ there is a bijection of \Hom-sets, \[\cat{C}(\functor{F}Y, X) \cong \cat{D}(Y, \functor{G}X),\] which is natural in both $Y$ and $X$. $\functor{G}$ is then \defemph{right adjoint} to $\functor{F}$.
     \end{definition}
     
