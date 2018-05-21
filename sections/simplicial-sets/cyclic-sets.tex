@@ -46,7 +46,7 @@
         \geom[\functor{F}(\Delta^n)] \cong S^1 \times \geom[\Delta^n].
     \end{equation}
 
-    The circle is an obvious choice of study when introducing geometric realization in general. Several models exist and they are straightforward to find with simplicial sets. One example is letting $n = 0$ in \eqref{loop-spaces} which is a cyclic set(and then also a simplicial). However, cyclic sets excel. The action of the corresponding cyclic group is somewhat compatible with simplicial structure and induces an action of the topological group $S^1$. This is summarized in the following theorem from \cite{loday-cyclic}.
+    The circle is an obvious choice of study when introducing geometric realization in general. Several models exist and they are straightforward to find with simplicial sets. One example is letting $n = 0$ in \eqref{loop-spaces} which is a cyclic set (and then also a simplicial). However, cyclic sets excel. The action of the corresponding cyclic group is somewhat compatible with simplicial structure and induces an action of the topological group $S^1$. This is summarized in the following theorem from \cite{loday-cyclic}.
 
     \begin{theorem}\label{main-result}
         The following is true about the geometric realization of a cyclic set $X$.
@@ -61,8 +61,14 @@
     Before proving \ref{main-result}, a quick reconsideration of adjoint functors is needed. 
     Of adjointness, an equivalent definition to \ref{def-adjoint} is by so called \defemph{unit-counit adjunction}. The proof of this equivalence is given in \cite{cate-mac}.
 
-    \begin{definition}
-        Two functors $\functor{F}: \cat{C} \to \cat{D},\, \functor{G}: \cat{D} \to \cat{C}$ are \defemph{adjoint} if there exists natural transformations $\varepsilon: \functor{FG} \to \mathrm{id}_\cat{D}$ and $\eta: \mathrm{id}_\cat{C} \to \functor{GF}$ such that $\varepsilon \functor{F} \circ \functor{F}\eta = \idarrow[\functor{F}]$ and $\functor{G}\varepsilon \circ \eta \functor{G} = \idarrow[F]$. In other words the following diagrams commute for every $X$.
+    \begin{definition}\label{def-unit-counit}
+        Two functors $\functor{F}: \cat{C} \to \cat{D},\, \functor{G}: \cat{D} \to \cat{C}$ are \defemph{adjoint} if there exists natural transformations $\varepsilon: \functor{FG} \to \mathrm{id}_\cat{D}$ and $\eta: \mathrm{id}_\cat{C} \to \functor{GF}$ (respectively called \defemph{unit} and \defemph{counit} of the adjunction) such that the following holds.
+
+        \begin{align*}
+            \varepsilon \functor{F} \circ \functor{F}\eta = \idarrow[\functor{F}] \\ \functor{G}\varepsilon \circ \eta \functor{G} = \idarrow[\functor{G}]
+        \end{align*}
+        
+        h. In other words the following diagrams commute for every $X$.
     \end{definition}
 
     \begin{figure}[H]
@@ -85,12 +91,6 @@
         \end{subfigure}
     \end{figure}
 
-    \begin{definition}
-        Let X be a simplicial space and let F(Y) be defined by:
-        $F(Y)_n=C_n\times Y_n, \qquad f_*(g,y)=(f_*(g), (g^*(f)_*(y)))$
-        $h^*(g,y) = (hg,y) $ for $f$ in $\Delta^{op}$, g and h $\in C_n$, $y\in Y_n$
-    \end{definition}
-
     Interpret $\functor{G}$ as the forgetful functor from $\cat{cSet}$ to $\cat{sSet}$ and $\functor{F}$ its left adjoint. Applying the geometric realization functor on the left diagram the following is obtained, with the action on $x \in \geom[X]$ drawn in.
 
     \begin{figure}[H]
@@ -111,5 +111,7 @@
             }
         \]
     \end{figure}
+
+    Knowing that the composition $|\functor{G} \mathlarger{\varepsilon}_X| \circ |\mathlarger{\eta}_{\functor{G}X}| = \idarrow[|X|]$ from the adjointness of $\functor{F}$ and $\functor{G}$ and the relations in \ref{def-unit-counit} one sees that $\zeta = |\functor{G} \mathlarger{\varepsilon}_X|: S^1 \times \geom[X] \to \geom[X]$ must map $(1, x)$ to $x$. The associativity of this operation shows that it is indeed a group action from $S^1$. For the proof of that associativity holds one is again referred to \cite{loday-cyclic} and its explicit construction of $\functor{F}$.
 
 \end{document}
