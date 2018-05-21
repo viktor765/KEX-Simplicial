@@ -120,7 +120,7 @@
         $f$, monotone and non-decreasing, is completely determined by its image in $\left\{ 0,...,n \right\}$ and those $j\in \left\{0,...,m-1 \right\}:f(j) = f(j+1)$. Let $i_1, ..., i_k$ be the elements of $[n] \setminus \Ima f$ in reverse order and $j_1, ..., j_l$ the elements of $\{j \in [m]: f(j) = f(j+1)\}$ in order. It is realized that this construction is equal to $f$ thus unique.
     \end{proof}
 
-    This proof was based on a proof from \cite{simp-maye}.
+    This proof was based on a proof from \cite{simp-may}.
 
     \begin{corollary}\label{uni-sim}
         Any simplex $x' \in X_n$ in a simplicial set $X$ has a unique representation
@@ -156,8 +156,8 @@
             \item $(s_ix_n, u_{n+1})\sim(x_n, s^iu_{n+1})$, $x_n \in X_n,\; u_{n+1}\in \Delta_{n+1}$
         \end{itemize}\label{geo-rel}
     \end{definition}
-    
-    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second relation one gets the \defemph{fat geometric realization}, for this report an esoteric concept. For reference $\bigGeom X = \coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]$. A point $(x_n,u_n)\in \bigGeom X$ is called \defemph{non-degenerate} if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A proof from \cite{simp-maye} of the following lemma which essential in the derivation of the properties of the geometric realization.
+
+    The $d^i,\; s^i$ are the induced coface and codegeneracy maps. Note that should one abandon the second relation one gets the \defemph{fat geometric realization}, for this report an esoteric concept. For reference $\bigGeom X = \coprod_{n=0}^{\infty} X_n \times \geom[\Delta^n]$. A point $(x_n,u_n)\in \bigGeom X$ is called \defemph{non-degenerate} if $x_n$ is non-degenerate and $u_n$ is an interior point of the simplex defined in the algebraic topology section, i.e. $u_n\in \Delta_n$ is interior if $ n=0$ or $ 0< t_i < 1 \;\forall\; i$. A proof from \cite{simp-may} of the following lemma which essential in the derivation of the properties of the geometric realization.
 
     \begin{lemma}\label{deg-rep}
         Given the equivalence relations in definition \ref{geo-rel}, every point $\left(x_n',u_n'\right)\in\bigGeom X$ is equivalent to a unique non-degenerate point $\left(x_m,u_m\right)$.
@@ -313,7 +313,7 @@
         If $X$ and $Y$ are simplicial sets then $\geom[X\times Y]\cong \geom[X]\times \geom[Y]$ in the category $\cat{CGHaus}$.
     \end{proposition}
 
-    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to obtain unique non-degenerate representatives and then establishing a bijection. 
+    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to obtain unique non-degenerate representatives and then establishing a bijection. A complete proof is in \cite{simp-may}. 
 
     This does not hold for simplicial complexes, a key difference. It is sufficient to require either that the simplicial sets are countable or that one of their geometric realizations $\geom[X],\; \geom[Y]$ is locally finite for the geometric realization to commute with the product. 
 
