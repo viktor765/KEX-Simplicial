@@ -117,7 +117,7 @@
         \label{fig:product}
     \end{figure}
     
-    Examples of products is the cartesian product in $\cat{Set}$, the topological product in $\cat{Top}$ and the direct product in $\cat{Grp}$. In these categories, any set of objects has a product with these explicit constructions. The main reason of having the topological product defined the way it is in \ref{top-prod} (finitely many $U_i \neq X_i$) is to make it the categorical product in $\cat{Top}$. Would we not have this requirement (also known as the \emph{box topology} on $X$) it would merely be a \defemph{cone} over the discrete diagram of all $c_i$.
+    Examples of products is the cartesian product in $\cat{Set}$, the topological product in $\cat{Top}$ and the direct product in $\cat{Grp}$. In these categories, any set of objects has a product with these explicit constructions. The main reason of having the topological product defined the way it is in \ref{top-prod} (finitely many $U_i \neq X_i$) is to make it the categorical product in $\cat{Top}$. Would we not have this requirement (also known as the \emph{box topology} on $X$) it would merely be a \emph{cone} over the discrete diagram of all $c_i$.
     
     As usual, there is a dual concept to products called a \defemph{coproduct}. Reverse all arrows in the definition of a product and one has a coproduct of $\{X_i\}_{i\in I}$.
 
@@ -215,10 +215,10 @@
         A functor $\functor{F}: \cat{C} \to \cat{Set}$ is called \defemph{representable} if there is an object $A \in \cat{C}$ such that there is a natural isomorphism $h^A \cong \functor{F}$.
     \end{definition}
     
-    \begin{theorem}[Yoneda lemma]
+    \begin{proposition}[Yoneda lemma]
         Any functor $\functor{F}: \cat{C} \to \cat{Set}$ has a bijection for all $A \in C$ 
         \[\functor{F}(A) \cong \mathrm{Nat}(h^A, \functor{F})\] natural in $A$.
-    \end{theorem}
+    \end{proposition}
     
     \begin{proof}
         Consider the following diagram of a natural transformation $\Phi$ between $h^A$ and $\functor{F}$ applied to $A$ and an arbitrary object $X \in C$. 
