@@ -297,6 +297,18 @@
         Should all the edges, 1-simplices, be identified the diagram realizes as a sphere. The simplicial set would then be modified so that $L_1=\{s_0*\}$ and then $d_iL_2=\{s_0*\},\; i=0,1,2$ which in turn would collapse in the geometric realization. In figure \ref{fig:squares} the degenerate simplices are omitted as is often the case. On a side note the simplicial complex would have needed additional 2-simplices as they would have need to remain being triangles after the realization as a torus.
     \end{example}
 
+    The geometric realization has a left adjoint, the singular functor. 
+
+    \begin{definition}
+        $S:\cat{Top}\to \cat{sSet}$ the \defemph{singular functor} sends a topological space $X$ to a simplicial set as follows. Define $SX_n=\Hom_{\cat{Top}}(\geom[\Delta^n],X)$,  together with the induced map of sets by pre-composition with coface $d^i$ and codegeneracy $s^i$ resulting in $d_i|d_ix=xd^i:\geom[\Delta^{n-1}] \to X,\; x \in SX_n$ and $s_i|s_ix=xs^i:\geom[\Delta^{n+1}]\to X,\; x \in SX_n$. 
+    \end{definition}
+    The relations required by the definition \ref{simplicial-set} for the induced $s_i$ and $d_i$ follows from $d^i,s^i$ satisfying the dual relations in $\Delta$.  
+    \begin{proposition}
+        For a simplicial space X and a topological space T the following holds
+        \[\Hom_{\cat{Top}}(\geom[X],T)\cong \Hom_{\cat{sSet}}(X,ST)\]
+        where S is the singular functor. I.e. S and $\geom[-]$ are adjoint. 
+    \end{proposition}
+    A proof can be found in \cite{simp-may}. 
     Similarly to topological spaces a product of simplicial sets can be realized as follows.
 
     \begin{definition}
@@ -313,7 +325,7 @@
         If $X$ and $Y$ are simplicial sets then $\geom[X\times Y]\cong \geom[X]\times \geom[Y]$ in the category $\cat{CGHaus}$.
     \end{proposition}
 
-    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to obtain unique non-degenerate representatives and then establishing a bijection. A complete proof is in \cite{simp-may}. 
+    In simple terms the proof gathers from the proof of proposition \ref{is-CW} where the constructed function is used to obtain unique non-degenerate representatives and then establishing a bijection. See \cite{simp-may} for a complete proof. 
 
     This does not hold for simplicial complexes, a key difference. It is sufficient to require either that the simplicial sets are countable or that one of their geometric realizations $\geom[X],\; \geom[Y]$ is locally finite for the geometric realization to commute with the product. 
 
