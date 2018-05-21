@@ -94,11 +94,21 @@
     Interpret $\functor{G}$ as the forgetful functor from $\cat{cSet}$ to $\cat{sSet}$ and $\functor{F}$ its left adjoint. Applying the geometric realization functor on the left diagram the following is obtained, with the action on $x \in \geom[X]$ drawn in.
 
     \begin{figure}[H]
-        \[
-            \begin{tikzcd}[row sep = large]
-                S^1 \times \geom[X] \arrow[r,"|\functor{G} \mathlarger{\varepsilon}_X|"] & \geom[X] \\
-                \geom[X] \arrow[u,"|\mathlarger{\eta}_{\functor{G}X}|"] \arrow[ur, equal]
-            \end{tikzcd}
+        \[ 
+            \stackinset{l}{10ex}{b}{13ex}{%
+                \scalebox{.8}
+                {% 
+                    \begin{tikzcd}[row sep=11ex, column sep = 11ex, ampersand replacement=\&]
+                        (1,x)\arrow[mapsto]{r} \& x \arrow[dl,equal] \\
+                        x \arrow[u,mapsto]
+                    \end{tikzcd}
+                }
+            }{% 
+                \begin{tikzcd}[row sep = 25ex, column sep = 25ex, ampersand replacement=\&]
+                    S^1 \times \geom[X] \arrow[r,"|\functor{G} \mathlarger{\varepsilon}_X|"] \& \geom[X] \\
+                    \geom[X] \arrow[u,"|\mathlarger{\eta}_{\functor{G}X}|"] \arrow[ur, equal]
+                \end{tikzcd}
+            }
         \]
     \end{figure}
 
